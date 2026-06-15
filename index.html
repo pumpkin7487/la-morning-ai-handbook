@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晨間廚房 La Morning - AI 應用實務課程手冊</title>
+    <meta name="description" content="專為晨間廚房學員量身打造的 AI 應用實務教學手冊。收錄文案生成、競品研究、活動企劃、菜單校對、設計把關等 11 大核心問題與實戰 Prompt。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 頂部導覽列 (Navbar) -->
+    <header class="navbar">
+        <a href="#" class="nav-brand">
+            <svg viewBox="0 0 100 100" class="logo-icon">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8" />
+                <path d="M30,55 C40,40 60,40 70,55" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+                <circle cx="50" cy="35" r="8" fill="currentColor" />
+                <path d="M25,65 L75,65" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            </svg>
+            <div>
+                <span class="logo-text">晨間廚房 <span style="color: var(--secondary)">AI 實務課</span></span>
+                <span class="logo-sub">La Morning AI Course Handbook</span>
+            </div>
+        </a>
+        <div class="nav-actions">
+            <!-- 主題切換按鈕 -->
+            <button class="btn-icon" id="themeToggle" title="切換主題" aria-label="切換主題">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10C2.2 6.9 6 2.7 11 2.1c.5-.1 1 .3.9.8-.1.4-.4.8-.8 1-3.6 1.7-5.9 5.3-5.9 9.3 0 5.1 4.2 9.3 9.3 9.3 3.8 0 7.2-2.2 8.7-5.6.2-.4.7-.7 1.1-.6.5.1.8.6.6 1.1-1.6 4.1-5.6 6.8-10.3 6.8z" fill="currentColor"/>
+                </svg>
+            </button>
+            <!-- 一鍵列印手冊按鈕 -->
+            <button class="btn-text" id="printBtn" title="列印或匯出 PDF 講義">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                列印手冊
+            </button>
+            <!-- 編輯模式與儲存按鈕 -->
+            <button class="btn-text" id="editToggle" title="編輯網頁文字">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4z"></path>
+                </svg>
+                編輯模式
+            </button>
+            <button class="btn-text" id="savePageBtn" style="display: none; background-color: #22c55e;" title="下載修改後的 index.html">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+                儲存網頁
+            </button>
+            <button class="btn-text" id="insertImgBtn" style="display: none; background-color: var(--secondary);" title="在游標處或頁面底部插入圖片">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                插入圖片
+            </button>
+            <!-- 手機版選單切換 -->
+            <button class="mobile-toggle" aria-label="打開選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要應用程式版面 (App Layout) -->
+    <div class="app-container">
+        
+        <!-- 左側側邊欄導覽 (Sidebar) -->
+        <aside class="sidebar">
+            <div class="sidebar-search">
+                <div class="search-wrapper">
+                    <svg viewBox="0 0 24 24" class="search-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="搜尋問題、技巧或關鍵字...">
+                </div>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <!-- 第一分組：行銷文案與研究篇 -->
+                <div class="menu-group">
+                    <h3 class="menu-title">📝 行銷文案與研究篇</h3>
+                    <a href="#q1" class="menu-item" data-page="q1">
+                        <span class="q-badge">Q1</span>
+                        <span>AI 消費者與對手分析做功課</span>
+                    </a>
+                    <a href="#q2" class="menu-item" data-page="q2">
+                        <span class="q-badge">Q2</span>
+                        <span>解決官腔：訓練品牌人設</span>
+                    </a>
+                    <a href="#q3" class="menu-item" data-page="q3">
+                        <span class="q-badge">Q3</span>
+                        <span>企劃卡關：用 AI 找新梗盲點</span>
+                    </a>
+                    <a href="#q4" class="menu-item" data-page="q4">
+                        <span class="q-badge">Q4</span>
+                        <span>反查資訊：防範 AI 資料錯誤</span>
+                    </a>
+                </div>
+                
+                <!-- 第二分組：設計排版與日常校對篇 -->
+                <div class="menu-group">
+                    <h3 class="menu-title">🎨 設計、排版與日常校對篇</h3>
+                    <a href="#q5" class="menu-item" data-page="q5">
+                        <span class="q-badge">Q5</span>
+                        <span>日常校對：檢查錯字與語病</span>
+                    </a>
+                    <a href="#q6" class="menu-item" data-page="q6">
+                        <span class="q-badge">Q6</span>
+                        <span>複雜菜單比對與資料格式</span>
+                    </a>
+                    <a href="#q7" class="menu-item" data-page="q7">
+                        <span class="q-badge">Q7</span>
+                        <span>海報轉換尺寸的排版協助</span>
+                    </a>
+                    <a href="#q8" class="menu-item" data-page="q8">
+                        <span class="q-badge">Q8</span>
+                        <span>客觀行銷顧問：把關視覺設計</span>
+                    </a>
+                    <a href="#q9" class="menu-item" data-page="q9">
+                        <span class="q-badge">Q9</span>
+                        <span>多人共用帳號對 AI 的影響</span>
+                    </a>
+                    <a href="#q10" class="menu-item" data-page="q10">
+                        <span class="q-badge">Q10</span>
+                        <span>海報調整：如何不改變產品圖</span>
+                    </a>
+                    <a href="#q11" class="menu-item" data-page="q11">
+                        <span class="q-badge">Q11</span>
+                        <span>突破限制：讓生成圖更多樣化</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 右側主要內容區 (Content Area) -->
+        <main class="content-area">
+            <!-- 編輯模式提示條 -->
+            <div class="editing-indicator-banner">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span>您已進入編輯模式！直接點選文字即可修改。按「結束編輯」系統會自動存檔。</span>
+                <button id="resetTemplateBtn" class="btn-text" style="background-color: #ef4444; color: #ffffff; padding: 4px 10px; font-size: 0.8rem; margin-left: 15px; border: none; height: auto;" title="清除所有修改，恢復成原始教材內容">重設網頁</button>
+            </div>
+            
+            <!-- 預設歡迎畫面 -->
+            <section id="welcome" class="welcome-panel">
+                <svg viewBox="0 0 100 100" class="welcome-logo">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary)" stroke-width="8" />
+                    <path d="M30,55 C40,40 60,40 70,55" fill="none" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" />
+                    <circle cx="50" cy="35" r="8" fill="var(--primary)" />
+                    <path d="M25,65 L75,65" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                </svg>
+                <h1>晨間廚房 AI 應用實務</h1>
+                <p>歡迎來到週四課程專屬手冊！本網站收錄了學員事先提出的 11 大核心問題。點擊左側選單，或是下方分類即可快速查閱解決方案、實操流程與專屬 AI Prompt 範本。</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item" data-category="copywriting">
+                        <div class="stat-num">4 題</div>
+                        <div class="stat-label">行銷文案與研究篇</div>
+                    </div>
+                    <div class="stat-item" data-category="design">
+                        <div class="stat-num">7 題</div>
+                        <div class="stat-label">設計、排版與校對篇</div>
+                    </div>
+                    <div class="stat-item" id="quickPrint">
+                        <div class="stat-num">1 鍵</div>
+                        <div class="stat-label">列印完整紙本手冊</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 搜尋無結果提示 -->
+            <div id="noResults" class="no-results">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <h3>找不到相符的內容</h3>
+                <p>請嘗試輸入其他關鍵字，例如「菜單」、「海報」、「文案」或「錯字」。</p>
+            </div>
+
+            <!-- ==========================================================================
+               Q1 頁面：用 AI 產文案，但怎麼用它來做功課？
+               ========================================================================== -->
+            <article id="q1" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">行銷文案與研究</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q1</span>
+                        用 AI 產文案，但怎麼用它來做功課？例如：叫它幫忙分析消費者在想什麼，或是去研究競爭對手厲害在哪裡？有沒有什麼技巧可以分享？
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>不要直接讓 AI「憑空猜測」，而是要把 AI 當作「分析工具」。餵給它真實的 Google 評論、社群文宣或產業架構，並引導它使用經典的市場分析工具（如 SWOT、同理心地圖）。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>收集並輸入原始數據 (Data Feeds)</h3>
+                            <p>收集對手的網頁產品介紹、Google 商家評論（特別是三星以下的負評以發掘痛點，五星好評以發掘優勢），複製貼上給 AI。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>設定專業角色與分析模型</h3>
+                            <p>賦予 AI 具體身份（如「資深餐飲市場顧問」），並指令它使用「同理心地圖（Empathy Map）」或「SWOT 矩陣」來整理數據。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>產出市場洞察與策略藍圖</h3>
+                            <p>要求 AI 將分析結果轉化為行動建議。例如：「針對對手出餐慢的弱點，晨間廚房可以推出什麼推廣標語？」</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 競品與消費者分析提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">你是一位資深的餐飲品牌行銷顧問。
+我想針對早午餐競爭對手 <span class="prompt-var">[請輸入對手品牌，例如：麥味登]</span> 的明星商品 <span class="prompt-var">[請輸入對手產品，例如：超值拼盤]</span> 進行消費者洞察。
+
+以下是該產品在網路上的真實評價數據：
+---
+<span class="prompt-var">[在此貼上收集到的 Google 評論、PTT/Dcard 評價或粉專留言]</span>
+---
+
+請幫我完成以下任務：
+1. 建立「消費者同理心地圖」：分析他們在購買此產品時「聽到了什麼、看到了什麼、心裡想什麼、有什麼痛點(Pains)與爽點(Gains)」。
+2. SWOT 分析：列出該對手此商品的優勢、劣勢，並為「晨間廚房」指出可以切入的市場機會 (Opportunities)。
+3. 行銷標語建議：請針對對手被抱怨的缺點，幫晨間廚房寫 3 個強調我們自身優勢（如出餐快速、現點現做）的吸睛推廣文案。</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>在收集對手負評時，可以挑出「出餐等待過久」、「食材冷掉」、「包裝漏湯」等細節，這些就是晨間廚房在做數位點餐推廣時可以強打的行銷切入點。</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">Gemini (聯網搜尋強)</span>
+                            <span class="tool-badge">ChatGPT</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q2 頁面：當 AI 產出的文案太官腔、沒特色時，怎麼訓練它？
+               ========================================================================== -->
+            <article id="q2" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">行銷文案與研究</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q2</span>
+                        當 AI 產出的文案太官腔、沒特色時，怎麼訓練它，好讓它能精準寫出符合特定品牌個性與人設的內容？
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>AI 預設會寫出最保守、官腔的「平均值文案」。要破除這一點，必須為它輸入「品牌個性指南」與「少樣本學習 (Few-Shot Prompting)」——也就是給它好文案範例，讓它模仿特定的口氣。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>設定品牌人設 (Brand Persona)</h3>
+                            <p>定義品牌角色。例如：晨間廚房是「溫暖親切的活力鄰家店長」，而不是「冰冷的連鎖總部發言人」。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>建立「負面清單」與禁用詞</h3>
+                            <p>列出不准使用的官腔詞彙，例如「引領業界」、「竭誠歡迎」、「共創雙贏」、「極致饗宴」，逼迫 AI 改用接地氣的口吻。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>提供對照範例 (Example Imitation)</h3>
+                            <p>餵給 AI 1~3 篇之前成效極佳、充滿品牌溫度的真實貼文，讓 AI 分析其句型長短、Emoji 使用頻率及常用呼籲（CTA）。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 品牌人設與口吻設定提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">你現在是「晨間廚房」的官方社群小編「阿杰店長」。
+我們品牌的個性是：【活力、溫暖親切、帶點台南/南部的人情味、接地氣、喜愛與鄰里熟客開玩笑】。
+
+請在撰寫文案時遵守以下規則：
+1. 禁用官腔詞彙：絕對不要使用「引領餐飲潮流」、「竭誠歡迎光臨」、「頂級美食饗宴」、「不容錯過」等字眼。
+2. 語氣設定：多用疑問句拉近距離，句尾可適度加上台灣本土感 Emoji（如：🍳, ☕, 👍），稱呼顧客為「晨粉」或「早起的朋友」。
+3. 字數與結構：短小精悍，控制在 150 字內，用分行代替大段落。
+
+參考範例：
+---
+「早安！今天又是被陽光曬醒的一天。阿杰店長今天推薦經典粉漿蛋餅，雙蛋加下去，活力直接滿格！你今天吃早餐了沒？在下面留言告訴我你最愛的蛋餅口味👇」
+---
+
+請模仿上述範例的口氣與人設，幫我寫一篇關於推廣 <span class="prompt-var">[填寫推廣新品，例如：特製奶酥厚片]</span> 的 FB 貼文。</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>如果您使用的是 ChatGPT 付費版，可以將這些規則直接寫入「Custom Instructions (自訂指令)」或自建專屬 GPTs，以後它每一次回答就都會自動套用這個口吻，不需重複輸入！</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">ChatGPT (Custom GPTs 功能最佳)</span>
+                            <span class="tool-badge">Claude (文筆細膩自然)</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q3 頁面：想活動企劃卡關、沒靈感時，怎麼辦？
+               ========================================================================== -->
+            <article id="q3" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">行銷文案與研究</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q3</span>
+                        想活動企劃想卡關、沒靈感的時候，會怎麼用 AI 來幫忙想新梗或找盲點？
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>想創意時，要逼 AI 跳脫舒適圈。使用「SCAMPER 思考法」、「跨界聯名聯想」或指示 AI 擔任「毒舌消費者（魔鬼代言人）」，從負面角度找出企劃的盲點與不具吸引力的主因。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>設定極限邊界與「瘋狂點子」</h3>
+                            <p>指令 AI 產生 30 個點子，規定其中 10 個必須是「正常但實用」、10 個是「跨界新奇」、10 個是「聽起來很荒謬但可能有商機的瘋狂點子」。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>使用 SCAMPER 思考模型進行演變</h3>
+                            <p>將現有的傳統活動（如：消費滿百送折價券）輸入 AI，要求它進行：替代(S)、合併(C)、調整(A)、修改(M)、移作他用(P)、消除(E)、重排(R)。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>進行盲點審查 (Stress Testing)</h3>
+                            <p>將初版的活動企劃丟給 AI，命令它扮演「挑剔、時間寶貴的機車顧客」，列出「我不想參加這個活動的 5 個理由」。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 活動企劃激盪與盲點審查提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">我目前正在為「晨間廚房」早午餐店籌備一個暑假行銷活動。目標是吸引【國高中生與大學生】在暑假期間多來店內消費、或使用 App 點餐。
+
+目前想到的點子有：<span class="prompt-var">[例如：集點送限量帆布袋，或新品炒泡麵打折]</span>。
+
+請幫我完成以下工作以突破靈感卡關：
+1. 創意激盪 (SCAMPER)：請利用 SCAMPER 思考模型，為這個初版點子演變出 5 個更酷、更受年輕人喜愛的活動玩法（例如融合社群挑戰、密室解謎或諧音梗）。
+2. 跨界聯名點子：幫我構思 3 個晨間廚房與年輕人熱愛事物（如人氣動漫、迷因文化、手遊）的虛擬聯名活動案。
+3. 盲點診斷 (魔鬼代言人)：請扮演一位「極度懶惰、憤世嫉俗的 19 歲大學生」。請毒舌地指出為什麼你完全不想參加我一開始想到的那個點子？有哪些門檻太高或不夠吸引你？</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>當 AI 給出的點子太廣泛時，可以追加提問：「請將第 2 個點子落實成具體的執行方案，包含：活動名稱、活動規則、贈品設計與 2 週內的行銷時程表。」</p>
+                    </div>
+                    <div class="tip-box warning-tip">
+                        <h4>⚠️ 盲點提示</h4>
+                        <p>注意活動執行的行政成本！早餐店現場人員非常忙碌，AI 常常會想出「流程太複雜、需要店員手動確認很多步驟」的企劃。請務必跟 AI 強調：「活動流程必須簡單，不能增加現場門市人員的負擔。」</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q4 頁面：如何判斷 AI 的資料是不是錯誤的？如何反查？
+               ========================================================================== -->
+            <article id="q4" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">行銷文案與研究</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q4</span>
+                        當我使用AI做競品或產業研究時，我該如何判斷他給出的資料到底是不是錯誤的? 如何反查資訊的真實性?
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>AI 的本質是「文字機率預測模型」，而非「事實資料庫」，這會導致它產生「幻覺（胡言亂語）」。判斷真實性要靠「限制輸入源」、「交叉比對法」與「來源索取指令」。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>識別易出錯的高風險資訊</h3>
+                            <p>凡是涉及「具體數字/統計」、「人物生卒年/經歷」、「特定店面地址與聯絡電話」、「具體法條或合約規範」等，皆屬於 AI 容易捏造的事實，不可直接使用。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>實施「強制溯源與警示提示」</h3>
+                            <p>在下指令時，強制要求 AI「必須附上參考網址」、「若找不到資訊必須直接回答不知道，不准編造」。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>資訊三維交叉比對 (Triangulation)</h3>
+                            <p>將 AI 給出的名詞或數據，手動拿到 Google、政府商工登記、食品藥物消費者知識服務網等權威來源進行二次搜尋確認。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 預防 AI 幻想與要求溯源提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">我想要研究台灣餐飲業 <span class="prompt-var">[例如：連鎖早午餐市場]</span> 在 2025 年至 2026 年的最新消費者趨勢報告。
+
+當你提供資料時，請務必嚴格遵守以下防錯規範：
+1. 僅提供你有把握的真實數據。如果某項數據你沒有確切的統計來源，請回答「資料庫無此紀錄」，絕對不要編造任何數字。
+2. 對於你提及的所有關鍵趨勢或統計結論，請在括號內標明【資訊來源的機構名稱】（例如：東方線上、經濟部統計處、食力 Foodnext）以及【報告發布的大致年份】。
+3. 請使用可以聯網搜尋的模式，並提供 2~3 個可供點擊反查的真實網頁連結。</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>最佳的防錯方法是：直接將可靠的 PDF（如加盟簡章、政府餐飲分析 PDF）上傳給 ChatGPT / Gemini，並命令它「只能根據我提供的工作檔案回答，不可使用外部聯想」。這叫檢索增強生成 (RAG)，出錯率極低。</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">Gemini (內建 Google 搜尋反查按鈕)</span>
+                            <span class="tool-badge">Perplexity (學術研究與溯源首選)</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q5 頁面：AI是否可以協助我檢查文宣、文件上的錯字，甚至語病?
+               ========================================================================== -->
+            <article id="q5" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q5</span>
+                        AI是否可以協助我檢查文宣、文件上的錯字，甚至語病?
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>這是 AI 非常擅長的日常工作。只要給予對應的台灣繁體中文脈絡，並指定「輸出修改對照表」，就能在幾秒內抓出錯別字、注音文、冗言贅字與前後邏輯矛盾。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>宣告繁體中文校對標準</h3>
+                            <p>指令 AI 使用台灣教育部國語辭典標準，並規定不要將台灣常用詞轉換成大陸用語（如：不可把「菜單」改為「菜譜」）。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>貼入要校對的文稿</h3>
+                            <p>將排版好的 DM 文案、合約草稿或官方公告複製，並放在標籤標記的區塊中，避免 AI 與指令搞混。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>生成對照表 (Diff Table)</h3>
+                            <p>要求 AI 用表格輸出【原文字】、【修正後文字】與【修改原因說明】，以便快速視覺比對，省去人工核對時間。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 專業文案校對與糾錯提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">你是一位擁有 20 年經驗的繁體中文報社總編輯與校對專家。請幫我檢查以下這篇「晨間廚房」的推廣文件文案。
+
+請幫我找出並修正以下問題：
+1. 錯別字（例如「再」與「在」混用、「名副其實」寫錯）。
+2. 不妥當的標點符號或漏字。
+3. 語意不通順、語病、邏輯前後矛盾的段落。
+4. 贅詞過多的句子（請精簡得更有力道）。
+
+【注意】請遵循台灣繁體中文的語言習慣與餐飲業術語（例如使用「菜單」而非「菜譜」、「起司」而非「芝士」）。
+
+請用以下 Markdown 表格格式輸出檢查結果：
+| 原文句子 | 建議修正後 | 修改類別（錯字/語病/精簡/標點） | 修改原因說明 |
+
+待校對文案如下：
+---
+<span class="prompt-var">[在此貼上你的文稿，例如：晨間廚房地中海新菜單開賣啦！在不來吃就要在等一年！保正讓你吃得美味又便宜...]</span>
+---</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>校對合約時，特別適合追加一個指令：「請幫我列出此合約中，對我們門市/總部最不利、或語意模糊不清的條款，並給予修正建議。」</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">Claude (最懂繁體中文語境與語病)</span>
+                            <span class="tool-badge">ChatGPT</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q6 頁面：複雜菜單比對與資料格式
+               ========================================================================== -->
+            <article id="q6" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q6</span>
+                        我們的菜單很複雜（分 4 個區域、3 種菜單品項(圖文菜單/三折卡/中英文菜單），每次校稿都看到眼花、壓力很大，AI 有辦法幫忙對照新舊菜單有沒有漏掉或寫錯嗎？如果想讓 AI 幫忙，我們應該準備什麼格式的資料餵給AI？
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>AI 擅長處理「結構化文字比對」。不要直接把設計圖丟給它，而是將新舊菜單內容整理成**「表格純文字」**（如 Excel 複製貼上成 Markdown 表格），交給 AI 進行全自動交叉分析。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>格式整理（Excel / CSV 轉文字）</h3>
+                            <p>在 Excel 中整理菜單。欄位包含：[分區/類別]、[中文品項]、[英文品項]、[價格]。
+                            全選並直接複製（複製後貼到記事本會變成 Tab 鍵分隔的乾淨純文字格式）。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>將舊版與新版資料分區貼入</h3>
+                            <p>在對照 Prompt 中，使用 `【舊版菜單資料】` 與 `【新版菜單資料】` 分別包裹貼上。這能確保 AI 清楚比對的前後關聯。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>生成變動警報報告 (Change Report)</h3>
+                            <p>讓 AI 輸出「新增品項」、「刪除品項」、「價格調整（列出舊價與新價）」、「英文拼寫修正」等四個分類，一眼看出改版差異。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 複雜新舊菜單交叉比對提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">我現在要校對「晨間廚房」的新舊菜單。我們有不同分區與格式，請幫我檢查有沒有漏掉、打錯價格或中英文翻譯不一致的地方。
+
+以下是我們的舊版與新版菜單文字資料（複製自 Excel）：
+
+【舊版菜單資料】
+---
+<span class="prompt-var">[在此貼上舊版 Excel 複製的文字，例如：]
+區域	類別	中文品項	英文品項	價格
+北部	蛋餅	雙蛋古早味蛋餅	Double Egg Danbing	45
+南部	厚片	招牌奶酥厚片	Signature Butter Toast	35</span>
+---
+
+【新版菜單資料】
+---
+<span class="prompt-var">[在此貼上新版 Excel 複製的文字，例如：]
+區域	類別	中文品項	英文品項	價格
+北部	蛋餅	雙蛋古早味蛋餅	Double Egg Classic Danbing	50
+南部	厚片	招牌奶酥厚片	Signature Milk Butter Toast	35
+南部	炒泡麵	台式炒泡麵	Taiwanese Fried Instant Noodles	75</span>
+---
+
+請幫我完成以下比對任務，並以繁體中文表格輸出結果：
+1. 【價格變動】：列出價格有調整的品項（顯示：品項名稱、舊價格、新價格）。
+2. 【品項變動】：列出新菜單中「新增」與「刪除」的品項。
+3. 【英文修正】：列出中英文翻譯與舊版不一致的品項（例如 Danbing 變成 Classic Danbing）。
+4. 【漏網之魚檢查】：檢查新菜單中是否有任何欄位是空白、缺字或格式錯誤的？</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>如果您有掃描好的舊菜單 PDF 或照片，可以使用 ChatGPT Plus / Gemini Advanced 的「文件分析功能」，直接上傳舊菜單圖檔與新 Excel 表格，命令它：「請將這張舊菜單圖片中的文字辨識出來，並與我提供的新 Excel 做比對。」</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">ChatGPT-4o (長表格比對最精準)</span>
+                            <span class="tool-badge">Gemini Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q7 頁面：大海報轉換 A4/A5 尺寸的排版協助
+               ========================================================================== -->
+            <article id="q7" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q7</span>
+                        當店家做好60X150公分的大海報之後，又想要做成A4或A5的尺寸放在櫃檯，這種轉換尺寸的排版，AI是否能夠協助這一類的動作?
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>純文字 AI 無法直接調整 Photoshop/Illustrator 設計稿的排版。但你可以用 **AI 排版軟體 (Canva) 的「一鍵魔術轉換」**，或讓 AI 幫忙**「精簡大尺寸文案」**，以適應小尺寸的閱讀視角。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>文案瘦身（大改小）</h3>
+                            <p>大尺寸海報 (60x150cm) 閱讀時間長、空間大，可放很多文字。但櫃檯 A5 立牌只有 3 秒閱讀時間。先將原海報文案貼給 AI 進行「精簡化與視覺重點化」。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>使用 Canva AI 魔術轉換 (Magic Switch)</h3>
+                            <p>如果使用 Canva 設計：點擊上方「Magic Switch」-> 選擇「A4 傳單」或自訂「A5 尺寸」-> 點擊轉換。Canva 的 AI 會自動縮放並重新分配所有圖片與文字區塊。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>向 AI 索取排版構圖比例建議</h3>
+                            <p>若需手動排版，可請 AI 提供排版構圖的版面比例（如黃金分割比例、文字大小級距對照），讓設計師有明確的對標規範。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 寬版海報文案精簡成 A5 桌上立牌提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">我有一張原尺寸為 60x150cm 的晨間廚房門市立牌大海報，文案非常多。現在我們要把海報重新設計成放在櫃檯的 A5 (14.8x21cm) 桌上立牌。
+因為空間變小了，顧客結帳時也只有 3 秒看立牌的時間，請幫我對文案進行瘦身，並給予排版結構建議。
+
+海報原始文案如下：
+---
+<span class="prompt-var">[在此貼上大尺寸海報文案，例如：晨間廚房新品上市！選用新鮮在地豬里肌肉，慢火香煎，配上獨家黃金麥香皮... 特惠價 85 元，活動期間自即日起到八月底，趕快來門市嚐鮮，APP預約不用排隊喔！]</span>
+---
+
+請提供：
+1. 【極簡版文案】：保留最核心的「吸睛標題、售價、一小句誘人賣點與 CTA（行動呼籲）」，字數控制在 25 字內。
+2. 【A5 視覺排版架構建議】：請從上到下，具體說明圖片、大標題、價格與 App QR Code 應該佔據 A5 版面的比例（例如：圖片佔上 50%，標題佔 20%... 等等）。</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>在 A5 櫃檯立牌上，最重要的 CTA 通常是「加價購」或「掃碼點餐」。請務必叫 AI 在精簡文案中加入引導掃碼的設計：「例如：掃碼預約，省下排隊 10 分鐘！」</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠 &nbsp; 推薦工具與功能</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">Canva Pro - Magic Switch 功能</span>
+                            <span class="tool-badge">Adobe Illustrator (ExtendScript 腳本編寫)</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q8 頁面：如何把 AI 訓練成客觀行銷顧問？
+               ========================================================================== -->
+            <article id="q8" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q8</span>
+                        做設計很容易流於主觀或個人喜好。我們要怎麼把 AI 訓練成一個客觀的行銷顧問，幫我們把關設計方向，讓視覺更貼近我們的客人喜好，而不是設計師自己的喜好？
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>要打破主觀，必須引進**「客觀評估框架」**。讓 AI 扮演「市場行銷總監」，並要求它依據「目標受眾人設 (Persona)」、「AIDA 行銷法則」與「視覺動線心理學」來嚴格審查設計。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>設定目標受眾 (Target Audience) 的輪廓</h3>
+                            <p>具體輸入晨間廚房的核心受眾人設。例如：「趕時間的上班族爸爸（注重速度與飽足感）」或「精打細算的家庭主婦（注重健康、CP值、孩子是否愛吃）」。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>上傳設計草圖進行視覺審查 (Visual Audit)</h3>
+                            <p>利用 GPT-4o 或 Gemini 的多模態功能上傳海報。告訴 AI 這是要給上述受眾看的，要求它進行客觀診斷。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>依據 AIDA 法則給予量化評分與修改指南</h3>
+                            <p>要求 AI 評估：Attention（吸睛度）、Interest（興趣激發）、Desire（食慾/慾望點燃）、Action（行動呼籲）。並列出三個最需要被修正的「主觀設計盲點」。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 客觀設計審查與視覺把關提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">我上傳了一張晨間廚房即將推出的 <span class="prompt-var">[請填寫主打新品，例如：松露蕈菇蛋餅]</span> 新品海報設計草圖。
+我們這次活動的核心目標受眾 (TA) 是：【注重質感、生活儀式感、且願意多花 15 元升級好食材的 25-38 歲上班族女性】。
+
+請你拋開個人主觀喜好，扮演一位客觀的「餐飲消費心理學家」與「行銷創意總監」，對這張設計進行視覺把關：
+1. 【TA 契合度評估】：這張圖的色彩搭配、字體、食物照片呈現方式，是否符合目標女性受眾的偏好？為什麼？
+2. 【AIDA 行銷效能診斷】：
+   - Attention (注意力)：海報中最吸引目光的元件是什麼？是否能在 2 秒內讓人看出是在賣什麼？
+   - Interest & Desire (興趣與食慾)：圖片與字型是否能成功勾起食慾？還是看起來太過冰冷偏向工業風？
+   - Action (行動)：特價標示、QR Code 或購買指引是否夠清晰？
+3. 【改進建議】：請列出這張海報中 3 個「可能流於設計師個人主觀美感，但對消費者來說不夠直覺或沒吸引力」的設計細節，並給予具體的修改方向。</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>可以叫 AI 給出色彩建議。例如：地中海藍（代表乾淨信任，適合作為品牌框線）與暖橘黃（代表食慾、朝氣，適合用在主標題或新品高亮背景），避免設計師使用過於灰暗、沒食慾的工業灰色系。</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">ChatGPT-4o (圖像視覺分析能力極強)</span>
+                            <span class="tool-badge">Gemini 1.5 Pro</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q9 頁面：多人共用帳號對 AI 養成的影響
+               ========================================================================== -->
+            <article id="q9" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q9</span>
+                        現在我們有5個人共用chatgpt，每個人問問題的方法和習慣都不同，請問是否會影響到chtgpt的養成?
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>**會影響單一對話框 (Thread)，但不會影響新對話。** 共用帳號最怕別人的對話歷史干擾你的設定。最佳解法是「一人開一個專屬對話」、「利用 GPTs / Gems 固定設定」或升級 Team 團隊版。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>嚴格執行「每次新對話 (New Chat) 原則」</h3>
+                            <p>AI 的「養成」主要存在於單一對話視窗內（Context Window）。每次要寫新企劃或校對新菜單，必須點擊左上角的「New Chat」重啟，這時 AI 就像剛出廠一樣乾淨，完全不受別人之前問話習慣的影響。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>利用 Custom GPTs 進行人設隔離</h3>
+                            <p>為不同任務建立專屬 GPT（如建立一個「晨間廚房文案專家」）。這樣一來，不管誰進去共用帳號使用這個 GPT，背後套用的都是同一套完美設定，也不會干擾主介面的歷史紀錄。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>定期整理與命名對話歷史</h3>
+                            <p>在左側歷史紀錄中，將自己正在進行的專案命名（例如：「小明-菜單校對專案」）。提醒其他共用成員不要點進該對話，避免脈絡被其他人的隨機提問污染。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房團隊協作規範範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 建立專屬 GPT 或是對話起始的 System Prompt</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">【晨間廚房專案專用 - 請勿在對話中詢問無關問題】
+你好，我是本帳號的共同使用者之一。本對話框專門用於處理「<span class="prompt-var">[填寫專案名稱，例如：2026年夏季菜單中英文對照]</span>」。
+
+請你在本對話中遵循以下運行規則：
+1. 你的角色設定為：<span class="prompt-var">[例如：高階排版校對專家]</span>。
+2. 你只回答與本專案直接相關的問題。若收到無關的問題（如詢問寫程式、旅遊規劃等），請委婉拒絕並提醒使用者「此為專案專用 Threads，請另開 New Chat」。
+3. 請保持你的回答口吻與格式前後一致。</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 協作小常識</h4>
+                        <p>ChatGPT 具體有 Memory (記憶) 功能，如果共用帳號，AI 會在後台默默記錄個人的偏好（如：喜歡用 Python 程式碼、特定寫作風格）。建議在設定中將「Memory (記憶功能)」關閉，確保每次都是最客觀的回答。</p>
+                    </div>
+                    <div class="tip-box warning-tip">
+                        <h4>⚠️ 安全性提醒</h4>
+                        <p>由於 5 個人共用，請絕對不要在對話中輸入「門市加盟主的機密個資」、「總部的財務未公開報表」或「與供應商的內部未公開機密協議」，以防其他人或 AI 後台訓練洩露敏感資訊。</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q10 頁面：海報調整：如何不改變產品圖？
+               ========================================================================== -->
+            <article id="q10" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q10</span>
+                        調整同一週邊產品海報時，AI很容易改變原產品上的圖片或整體尺寸，導致每一次下指令都要重新申明產品整體圖片與尺寸都不要改變，請問有什麼方法可以讓AI不要調整我原產品的圖，只修改背景？
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>圖像生成 AI 運作是「整張圖重新降噪生成」，無法精確保留特定物件。解決此問題不能單靠下指令，而要採取**「去背與背景生成分流法」**或使用 **Photoshop 的「生成式填充 (Generative Fill)」**。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>方法一：局部重繪法 (Inpainting)</h3>
+                            <p>使用 Photoshop、Midjourney 或 Canva。先上傳原圖，用筆刷塗抹除產品主體以外的背景區域（遮罩），在提示詞中輸入你想要替換的新背景，這能強制 AI 鎖定產品主體，只重新生成背景。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>方法二：去背合成分流法（最推薦，100%不變形）</h3>
+                            <p>步驟一：將原始產品（如晨間經典奶酥厚片實物照）使用去背工具（如 PhotoRoom）去背，保留為透底的 PNG 檔。
+                            步驟二：讓圖像 AI（如 Midjourney）單獨生成多張精美的背景圖（如：陽光灑落的地中海風格晨光木桌）。
+                            步驟三：在 Canva 或 PS 中將去背產品圖疊加在生成好的背景上。這能保證產品主體不產生任何 AI 變形。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>設定基準種子值 (Seed Number)</h3>
+                            <p>在 Midjourney 或 Stable Diffusion 中，若非得用 AI 微調整張圖，必須找出第一張滿意圖的 `--seed` 值，並在後續修改指令時附帶，能最大化保持畫面的一致性與尺寸穩定。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 Midjourney 局部修改背景語法範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 圖像 AI 背景替換指令</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">【在 Midjourney 中使用 Vary Region 功能，或在 Photoshop 生成式填充中使用】
+[框選區域：產品外的所有背景]
+
+提示詞 (Prompt)：
+A sunlit Mediterranean style breakfast table, warm morning sunbeams, soft out-of-focus background, cozy breakfast cafe atmosphere, high-end photography, realistic, depth of field --ar 16:9</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>強烈推薦早餐店小編使用 **PhotoRoom App**，它內建了為電商設計的 AI 背景功能，你只要拍一張真實的蛋餅照片，它會自動幫你完美去背，並一鍵幫你合成出數十種超質感的 AI 背景，保證蛋餅長得一模一樣！</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">PhotoRoom (去背合成極簡好上手)</span>
+                            <span class="tool-badge">Photoshop - Generative Fill</span>
+                            <span class="tool-badge">Canva - Magic Edit</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==========================================================================
+               Q11 頁面：突破限制：讓生成圖更多樣化
+               ========================================================================== -->
+            <article id="q11" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">設計、排版與日常校對</span>
+                </div>
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="question-num">Q11</span>
+                        AI生成的設計圖很容易被我們所提供的佈局限制，像是建議資訊簡化或是其他調整方向都還是會沒辦法跳脫一開始所提出的設計，會建議怎麼訓練AI讓他生成出的圖能夠多樣化?
+                    </div>
+                    <div class="core-summary">
+                        <h4>💡 核心心法</h4>
+                        <p>AI 在有「墊圖（Image-to-Image / Reference）」的情況下，預設會為了配合原圖而顯得保守。要突破限制，必須調高**「混亂度/隨機值參數」**、使用**「否定提示詞」**，或讓 AI 扮演**「多位不同流派的設計大師」**來重構排版。</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🛠️ 解決步驟與流程</h2>
+                <div class="stepper-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>善用隨機度與混亂參數</h3>
+                            <p>如果在 Midjourney，加入 `--chaos 50`（數值 0-100，越高越有創意）或 `--style raw` 擺脫預設框架。如果在 Stable Diffusion，將重繪幅度 (Denoising strength) 提高到 0.75 以上，讓 AI 敢於重新改動線條與構圖。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>設定「否定提示詞 (Negative Prompt)」</h3>
+                            <p>明確寫出「不想要」的佈局。例如告訴 AI：「不要使用置中構圖、不要使用網格排版、不要使用常見的藍白色調」。這會逼迫 AI 的機率模型走上完全不同的設計道路。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>「多流派大師聯手」提示詞技術</h3>
+                            <p>先叫文字 AI 扮演包浩斯學院設計師、日本極簡大師、美國普普藝術家，請他們針對同一個早餐主題寫出三種完全不同世界觀的「視覺構圖敘述」，再將這些敘述餵給圖像生成 AI。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📝 晨間廚房實戰 Prompt 範本</h2>
+                <div class="prompt-card">
+                    <div class="prompt-header">
+                        <span class="prompt-title-text">💡 突破限制的多樣化圖像生成提示詞</span>
+                        <button class="btn-copy">複製提示詞</button>
+                    </div>
+                    <div class="prompt-body">
+                        <pre class="prompt-text">【步驟一：用 ChatGPT 生成跳脫框架的構圖敘述】
+請為「晨間廚房早午餐」的招牌餐點設計，分別以以下三位大師的視覺風格，撰寫三段給圖像生成 AI（如 Midjourney）的英文提示詞描述：
+1. 原研哉 (Kenya Hara) 的無印極簡風：強調大面積留白、極簡自然光影、低飽和木質基調。
+2. 普普藝術風 (Pop Art)：強調高飽和對比色、粗線條插畫感、美式復古趣味。
+3. 包浩斯 (Bauhaus) 現代幾何風：強調強烈的不對稱幾何分割、三原色點綴、極具張力的字體排版佈局。
+
+【步驟二：將生成的英文提示詞輸入圖像 AI，並附帶以下參數以增加多樣性】
+[貼上步驟一中你喜歡的風格英文描述] --chaos 60 --style raw --ar 4:3</pre>
+                    </div>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-box pro-tip">
+                        <h4>✨ 實用技巧</h4>
+                        <p>在有參考圖的情況下，Midjourney 的 `--iw` (Image Weight，圖片權重) 預設為 1.0。若想讓 AI 自由發揮，可以將其設定為 `--iw 0.2`。數值越低，AI 受你上傳的原圖限制就越小，越能生成完全不同的新設計！</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>🛠️ 推薦工具與參數</h4>
+                        <div class="tools-row">
+                            <span class="tool-badge recommend">Midjourney (隨機性與質感最高)</span>
+                            <span class="tool-badge">SDXL / Flux (文字渲染與排版更佳)</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+    <!-- 插入圖片 Modal -->
+    <div id="imageModal" class="custom-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📷 插入圖片工具</h3>
+                <span class="modal-close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tabs">
+                    <button class="modal-tab-btn active" data-tab="tab-local">本機上傳 (自動嵌入網頁)</button>
+                    <button class="modal-tab-btn" data-tab="tab-path">路徑/網址 (引用外部檔案)</button>
+                </div>
+                
+                <!-- 本機上傳分頁 -->
+                <div id="tab-local" class="modal-tab-panel active">
+                    <p class="tab-desc">選擇您電腦裡的圖片，系統會將它轉換為 Base64 編碼嵌入 HTML。這樣網頁下載後就能獨立顯示，圖片不會遺失！</p>
+                    <div id="dropzone" class="upload-dropzone">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span id="uploadStatusText">點擊選擇電腦中的圖片</span>
+                    </div>
+                    <input type="file" id="localImgInput" accept="image/*" style="display: none;">
+                    <div id="imgPreviewContainer" style="display: none; margin-top: 15px; text-align: center;">
+                        <img id="localImgPreview" src="" alt="預覽圖" style="max-height: 150px; border-radius: 8px; border: 1px solid var(--border);">
+                        <p id="localImgName" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 5px;"></p>
+                    </div>
+                </div>
+                
+                <!-- 路徑網址分頁 -->
+                <div id="tab-path" class="modal-tab-panel">
+                    <p class="tab-desc">輸入相對於此 HTML 網頁的本機圖片路徑（如 <code>images/photo.png</code>）或網路圖片 URL。</p>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="imgUrlInput">圖片路徑或網址：</label>
+                        <input type="text" id="imgUrlInput" class="search-input" placeholder="例如：images/my_photo.png 或 https://example.com/pic.jpg" style="padding-left: 15px; margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-text" id="cancelImgBtn" style="background-color: var(--text-light); color: var(--text-primary); border: 1px solid var(--border);">取消</button>
+                <button class="btn-text" id="confirmImgBtn" style="background-color: var(--primary); color: #ffffff;">確認插入</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 圖片調整大小工具列 -->
+    <div id="imageResizerToolbar" class="image-resizer-toolbar" style="display: none;">
+        <button class="resize-btn" data-size="25">25%</button>
+        <button class="resize-btn" data-size="50">50%</button>
+        <button class="resize-btn" data-size="75">75%</button>
+        <button class="resize-btn" data-size="100">100%</button>
+        <button class="resize-btn delete-img-btn" style="background-color: #ef4444; color: #ffffff; border: none; margin-left: 5px;">🗑️ 刪除</button>
+    </div>
+
+    <!-- JavaScript 腳本 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
