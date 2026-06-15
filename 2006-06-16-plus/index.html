@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="zh-TW"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>115學年度幼兒園性別平等桌遊設計手冊</title>
+    <meta name="description" content="本網頁收錄了台北市 115 年度幼兒園性別平等教育工作小組，各園所基於繪本與 SEL 概念開發的 7 套性平桌遊設計構思。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- Styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+
+    <!-- 頂部導覽列 (Navbar) -->
+    <header class="navbar">
+        <a href="#" class="nav-brand">
+            <svg viewBox="0 0 100 100" class="logo-icon">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8"></circle>
+                <path d="M30,55 C40,40 60,40 70,55" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"></path>
+                <circle cx="50" cy="35" r="8" fill="currentColor"></circle>
+                <path d="M25,65 L75,65" stroke="currentColor" stroke-width="6" stroke-linecap="round"></path>
+            </svg>
+            <div>
+                <span class="logo-text">115 年 <span style="color: var(--secondary)">性平桌遊研發團隊</span></span>
+                <span class="logo-sub">115 Gender Equality Board Game R&amp;D Team</span>
+            </div>
+        </a>
+        <div class="nav-actions">
+            <!-- 主題切換按鈕 -->
+            <button class="btn-icon" id="themeToggle" title="切換主題" aria-label="切換主題">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.38-.38.38-1.02 0-1.41zM6.99 15.93c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41z" fill="currentColor"></path></svg>
+            </button>
+            <!-- 一鍵列印手冊按鈕 -->
+            <button class="btn-text" id="printBtn" title="列印或匯出 PDF 講義">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                列印手冊
+            </button>
+            <!-- 編輯模式與儲存按鈕 -->
+            <button class="btn-text" id="editToggle" title="編輯網頁文字">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4z"></path>
+            </svg>
+            編輯模式
+        </button>
+            <button class="btn-text" id="savePageBtn" style="display: none; background-color: rgb(34, 197, 94);" title="下載修改後的 index.html">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+                儲存網頁
+            </button>
+            <button class="btn-text" id="insertImgBtn" style="display: none; background-color: var(--secondary);" title="在游標處或頁面底部插入圖片">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                插入圖片
+            </button>
+            <!-- 手機版選單切換 -->
+            <button class="mobile-toggle" aria-label="打開選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要應用程式版面 (App Layout) -->
+    <div class="app-container">
+        
+        <!-- 左側側邊欄導覽 (Sidebar) -->
+        <aside class="sidebar">
+            <div class="sidebar-search">
+                <div class="search-wrapper">
+                    <svg viewBox="0 0 24 24" class="search-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="搜尋學校、繪本或桌遊關鍵字...">
+                </div>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="menu-group">
+                    <h3 class="menu-title">🏫 幼兒園桌遊設計提案</h3>
+                    <a href="#shuang-yong" class="menu-item" data-page="shuang-yong">
+                        <span class="q-badge">A</span>
+                        <span>雙永國小附設幼兒園</span>
+                    </a>
+                    <a href="#fu-de" class="menu-item active" data-page="fu-de">
+                        <span class="q-badge">B</span>
+                        <span>福德國小附設幼兒園</span>
+                    </a>
+                    <a href="#xing-an" class="menu-item" data-page="xing-an">
+                        <span class="q-badge">C</span>
+                        <span>幸安國小附設幼兒園</span>
+                    </a>
+                    <a href="#dong-men" class="menu-item" data-page="dong-men">
+                        <span class="q-badge">D</span>
+                        <span>東門國小附設幼兒園</span>
+                    </a>
+                    <a href="#tai-ping" class="menu-item" data-page="tai-ping">
+                        <span class="q-badge">E</span>
+                        <span>太平國小附幼</span>
+                    </a>
+                    <a href="#zhong-zheng" class="menu-item" data-page="zhong-zheng">
+                        <span class="q-badge">F</span>
+                        <span>臺北市立中正幼兒園</span>
+                    </a>
+                    <a href="#shi-dong" class="menu-item" data-page="shi-dong">
+                        <span class="q-badge">G</span>
+                        <span>士東附幼</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 右側主要內容區 (Content Area) -->
+        <main class="content-area" contenteditable="false">
+            <!-- 編輯模式提示條 -->
+            <div class="editing-indicator-banner">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span>您已進入編輯模式！直接點選文字即可修改。按「完成編輯」系統會自動存檔至瀏覽器。</span>
+                <button id="resetTemplateBtn" class="btn-text" style="background-color: #ef4444; color: #ffffff; padding: 4px 10px; font-size: 0.8rem; margin-left: 15px; border: none; height: auto;" title="清除所有修改，恢復成原始教材內容">重設網頁</button>
+            </div>
+            
+            <!-- 預設歡迎畫面 -->
+            <section id="welcome" class="welcome-panel" style="display: none;">
+                <svg viewBox="0 0 100 100" class="welcome-logo">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary)" stroke-width="8"></circle>
+                    <path d="M30,55 C40,40 60,40 70,55" fill="none" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"></path>
+                    <circle cx="50" cy="35" r="8" fill="var(--primary)"></circle>
+                    <path d="M25,65 L75,65" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"></path>
+                </svg>
+                <h1>性別平等與自我調適 (SEL)</h1>
+                <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">115 學年度幼兒園學具及教材設計構思手冊</p>
+                <p>本手冊收錄了台北市幼兒園工作小組研發的 7 套創新性平桌遊構思。點選左側選單可查看各校的遊戲玩法、重點整理、發展建議及中文推薦桌遊。</p>
+                
+                <div class="stats-grid" style="margin-top: 1.5rem;">
+                    <div class="stat-item" data-category="copywriting">
+                        <div class="stat-num">7 所</div>
+                        <div class="stat-label">幼兒園桌遊設計提案</div>
+                    </div>
+                    <div class="stat-item" data-category="design">
+                        <div class="stat-num">14 套</div>
+                        <div class="stat-label">中文推薦參考桌遊</div></div>
+                </div>
+            </section>
+
+            <!-- 搜尋無結果提示 -->
+            <div id="noResults" class="no-results">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <h3>找不到相符的內容</h3>
+                <p>請嘗試輸入其他關鍵字，例如「霍金」、「拼布」、「UNO」或「廚房」。</p>
+            </div>
+
+            <!-- ==========================================================================
+               雙永國小附設幼兒園 頁面
+               ========================================================================== -->
+            <article id="shuang-yong" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">A</span>
+                        雙永國小附設幼兒園
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">Chef（廚房裡的英雄）</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《廚房裡的英雄》（大衛·昂格 / 小魯文化）</p><p style="margin-bottom: 0.5rem;"><img src="data:image/webp;base64,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" alt="使用者插入圖片" class="" style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0px; display: block; border: 1px solid var(--border); box-shadow: var(--shadow-md); width: 25%;"><br></p>
+                        <p><strong>原始參考桌遊：</strong>大富翁、美味顛翻天<br><br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVC7-xEUM23y3A-HsDclPA_FaNZCoexmGwUA&amp;s" alt="使用者插入圖片" class="" style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0px; display: block; border: 1px solid var(--border); box-shadow: var(--shadow-md); width: 25%;"><br></p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>以繪本《廚房裡的英雄》為基礎，結合樂高自製人偶、平底鍋拋卡牌等實物配件。</li>
+                <li><strong>核心機制：</strong>設計了「甩鍋大師」（動作敏捷、卡牌配對）與「完美酷客」（合作跑丁、能力差異、情境解決）兩種不同深度的玩法。</li>
+                <li><strong>融入概念：</strong>傳遞「職業與家務不受性別限制」的性平概念，並透過情境卡融入 SEL 學習（如衝動控制、情緒調節、團隊領導力）。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖 作品特色</h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">一、將「廚房」作為遊戲場景，非常貼近幼兒的生活經驗</p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><br></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">二、 運用<strong>「特質旗幟」的設計</strong>（力量、細心、溫柔、堅韌等）</p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;"><br></span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;">三、作為角色能力，讓孩子在合作中體驗到「每個人都有獨特價值與貢獻」</span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;"><br></span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;">四、 拋接食材的「甩鍋大師」動態玩法符合幼兒的好動天性，兼具體感操作與認知配對，兼顧動靜態發展</span></p>
+                </div>
+
+                <h2 class="section-headline">🚀 思考與發展方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li><strong>玩法二與玩法三的整合優化：<br></strong>如果分開玩時，機制單薄，可以把「甩鍋」作為遊戲板塊中的一個隨機挑戰（例如踩到「甩鍋點」時，需要在一分鐘內成功甩起某個食材卡才可獲得該食材），把甩鍋動作融入主要的合作送餐遊戲中<br><br></li>
+                <li><strong>性平情境卡的深度引導：</strong>避免問題過於單一<br><br>（例如「中央廚房需要大量豆泥只有男生能做，請表達想法」可能容易引導出刻板印象）<br><br>可以將性平問題轉化為情境選擇，例如：「客人說：『這家餐廳的主廚一定是男生！』，我們該怎麼用我們的特質去回應他？」或「小男生想穿粉紅色圍裙，但被別人笑，我們該如何支持他？」，引導幼兒具體表達想法。<br><br></li>
+                <li><strong>能量機制的平衡：</strong>「體力耗盡」會讓遊戲體驗中斷，可以設計「完成送餐--&gt;恢復能量」，讓孩子持續挑戰的動力</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 炒麵大師 (Wok on Fire)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">這是一套極具體感與歡樂效果的卡牌桌遊。玩家必須用實體塑膠鏟子在桌面大鍋中翻動食材卡牌，並按照食譜配對得分。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這與「甩鍋大師」的體感玩法極為契合，用鏟子翻牌非常吸引幼兒，有出中文版本且極易在各大桌遊店或網路上買到。</p>
+                        <a href="https://www.google.com/search?q=炒麵大師+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 美味折翻天 (Fold-it)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">這是一套考驗手眼協調的烹飪桌遊，玩家需要折疊布質食譜卡，在有限時間內完成指定的餐點配方。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這款桌遊有出中文版，難易度可調整，布料摺疊非常適合幼兒小肌肉鍛鍊，且完美扣合「主廚烹飪」的主題。</p>
+                        <a href="https://www.google.com/search?q=美味折翻天+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content" open="">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+Chef （廚房裡的英雄）
+|
+改編者
+(學校名稱) |
+雙永國小附設幼兒園
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+廚房裡的英雄／大衛•昂格／小魯文化
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+大富翁、美味顛翻天
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+◼生理性別、性傾向、性別特質與性別認同多樣性的尊重
+◻身體自主權的尊重與維護
+◻性騷擾、性侵害與性霸凌的防治
+◻性別權力關係與互動
+◼性別與多元文化
+|
+|
+◻性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+◻性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸 凌的防治(制)能力。
+◻性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+■性 C3 尊重多元文化，關注本土的性別 平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+■1. 關係
+1.3 寬容、包容與尊重：每個人都是獨特的，都可以貢獻社會，也都有權受到尊重
+◻2. 價值觀、權利與性
+■3. 理解性別
+3.2 性別平等、刻板印象與偏見：每個人都有同樣重要的價值，與其性別無關
+◻4. 暴力與安全保障
+◻5. 健康與福祉技能
+◻6. 人體與發育
+◻7. 性與性行為
+◻8. 性與生殖健康
+|
+SDGS |
+◻ SDG 1  ◼ SDG 2 ◼ SDG 3  ◻ SDG 4  ◻ SDG 5  ◻ SDG 6
+◻ SDG 7  ◻ SDG 8 ◻ SDG 9  ◼ SDG 10 ◻ SDG 11 ◻ SDG 12
+◻ SDG 13 ◻ SDG 14◻ SDG 15 ◻ SDG 16 ◼ SDG 17
+|
+SEL |
+◻ 情緒調節
+◻ 認知調節
+◻ 社交技巧
+◼ 公共精神： 領導力
+◻ 自我認同與自主能動性
+|
+性別平等教育
+學習指標
+(參考附件) |
+性平-大-3-1-1
+欣賞自己與他人的特質，不受性別限制
+性平-小中-3-1-1
+喜歡自己的特質，不受性別限制
+性平-中大-1-2-2
+認識不同性別的人可從事多元的職業及角色活動
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+◻身體動作與健康
+◻認知
+◻情緒
+◻語文
+◻美感
+◼社會：社-2-2 同理他人，並與他人互動
+社-3-3 關懷與尊重生活環自己境中的他人
+|
+活動方式 |
+玩法一   甩鍋大師      (層級-認識重要配件)
+一、使用配件：平底鍋、食材卡、餐點卡
+二、人數：2-4人
+三、玩法：
+遊戲準備
+將食材卡放入平底鍋中。
+玩家抽取一張餐點卡。
+遊戲開始
+玩家輪流將平底鍋中的食材卡拋起，食材卡翻到正面即可獲得該食材。
+對照餐點卡收集對應的食材卡，最快完成指定菜餚的玩家獲勝。
+四、遊戲結束/計分方式
+完成指定菜餚即可獲得美味餐點卡
+|
+|
+玩法二、玩法三合併  完美酷客   (層級-性平概念、SEL）
+一、使用配件：活動配件1-10
+二、人數：4人
+三、玩法
+遊戲準備
+擺放遊戲底版並將「SEL任務卡」、「性平任務卡」及「餐點卡」洗勻，面朝下放在遊戲板對應位置。
+玩家創造喜歡的角色（lego積木），並抽取專屬特質（ex.細心、力量…）
+抽取4張餐點卡放置點餐區作為起始。
+遊戲說明
+食材點(+甩鍋點)：擲骰子移動後停留於「食材點」可獲得該格內對應食材，另設置「甩鍋點」可以甩鍋遊戲獲得隨機食材。
+傳送門：擲骰子移動後停留於「傳送門」可快速移動至指定格。
+災難點：玩家遭逢天災人禍，任務將受到阻礙。
+送餐點：可將完成的餐點配送給客人。
+SEL任務卡：成員合力完成SEL情境任務。
+性平任務卡：成員合力完成性平情境任務。
+愛心能量：玩家全數走完一輪體力減少一格。
+遊戲進行
+玩家輪流擲骰子，依順時針方向移動角色，並進行停留格子上的任務。(搜集食材、完成送餐）
+完成SEL、性平任務可獲得卡片上對應機會或獎勵。
+四、遊戲結束/計分方式
+愛心能量耗盡或已經沒有餐點卡任務可以進行，即遊戲結束。(需在體力用完前至少完成n次送餐、送越多越好。)
+|
+|
+|
+活動配件 |
+餐點卡_玩家翻開餐點卡接單，卡片標示餐點所需的食材，亦設計不同的點餐客人，傳遞職業不受性別限制的概念。
+例：完成滅火工作的消防員阿姨想要一份火腿三明治補充能量，材料需蒐集麵包、火腿、生菜、番茄。
+災難卡_愛心餐點籌備過程遭遇困難。
+例：颱風來襲蔬菜全泡壞、禽流感盛行雞肉須銷毀
+SEL任務卡（需搭配玩家於遊戲開始前抽取的專屬特質）
+例：大廚們烹飪時太過激動，請堅韌與溫柔的玩家和大廚們共同約定一個冷靜口號，當大家太大聲時喊口號(衝動控制)
+災民餓到生氣了，請智慧的玩家講出一句安撫的話(調節情緒)
+廚房停電了大家閉眼，請細心的玩家指揮下一輪行動(領導力)
+性平任務卡：
+中央廚房需要大量豆泥只有男生能做(表達想法)
+**任務卡完成獎勵：恢復一點能量、直接取得某食材、移動到任意食材格...
+食材10種(小模型或不織布)，各數個：
+吐司、起司、豆子、生菜、番茄、雞肉、魚肉、火腿、蘋果、香蕉
+能量愛心*1
+工具：夾子*1、盤子*1、平底鍋*1、骰子*1
+Lego配件(自製代表自己的角色)：
+各式表情、髮型、上半身、下半身配件數個
+特質Lego旗幟*8：
+力量、細心、勇敢、智慧、創意、速度、溫柔、堅韌
+遊戲底版*1
+=
+沙漏*1
+|
+需要教授講師的支持或幫助
+(實作中發現的困難) |
+玩法二、三若拆開SEL及性平進行，遊戲機制略顯單薄。
+設計性平情境卡(提問問題方式)，期望聚焦繪本相關內容，但感覺問題偏單一。</div>
+                </details>
+            </article>
+
+            <!-- ==========================================================================
+               福德國小附設幼兒園 頁面
+               ========================================================================== -->
+            <article id="fu-de" class="page-container active">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">B</span>
+                        福德國小附設幼兒園
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">珍古德與黑猩猩的故事</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《黑猩猩的好朋友》（珍·古德傳記繪本）</p>
+                        <p><strong>原始參考桌遊：</strong>推倒提基</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>以《黑猩猩的好朋友》為起點，引導幼兒探索女性在科學、環境保護與領導角色上的表現。</li>
+                <li><strong>核心機制：</strong>參考經典桌遊《推倒提基》的機制，設計用功能卡上下移動「彩虹磚頭」的版塊機制。</li>
+                <li><strong>融入概念：</strong>引導孩子理解「女性也能成為領導角色」，並在回答問題時，練習以清晰的口語表達想法。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖&nbsp;<span style="background-color: rgb(252, 249, 245); font-size: 1.2rem;">&nbsp;</span><span style="background-color: rgb(252, 249, 245); font-size: 1.2rem;">作品特色</span></h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">一、選擇珍古德作為主題，切入「女性也能成為優秀科學家與領導者」</p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;"><br></span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;">二、把 《推倒提基》玩法</span><span style="color: var(--text-primary); font-size: 0.98rem;">簡化為「彩虹磚頭」的上下移動，能讓幼兒在空間認知（上下、順序）得到鍛鍊。&nbsp;</span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;"><br></span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;">&nbsp;三、配合提問卡鼓勵，可以鼓勵口語表達</span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;"><br></span></p><p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;"><span style="color: var(--text-primary); font-size: 0.98rem;">四、將彩虹色塊結合科學探索，很有挑戰性</span></p>
+                </div>
+
+                <h2 class="section-headline">🚀 進一步發展的方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li>目前構思表缺少了玩法二（性平概念）和玩法三（SEL）<br><br></li><li>建議可以將「珍古德與黑猩猩的野外觀察」或「森林保育」融入<br><br>例如：<br><br>玩法二（性平）：設計「觀察員任務卡」，卡牌內容是不同性別的人從事野外調查、動植物照護等工作，破除職業刻板印象<br><br>玩法三（SEL）：融入動物保育與同理心，設計「黑猩猩生病/難過時」的情境提問<br><br></li>
+                <li><strong>口語提問與功能卡機制的結合：</strong>建議將「提問卡」與「功能卡」做聯動。<br><br>例如：當玩家抽到提問卡並勇敢說出自己的想法後，才能獲得「功能卡」來移動彩虹磚頭。<br><br>這能將「口語表達」與「遊戲推進」緊密結合，讓孩子更有動機表達。<br><br></li>
+                <li><strong>簡化計分機制：</strong>隱藏任務計分對幼兒來可能過於複雜<br><br>建議改為合作模式：全員共同合作，在特定回合內將彩虹磚頭推到頂端，中途需回答問題以清除阻礙障礙。</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 推倒提基 (Tiki Topple)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">玩家透過手中的功能卡，上下推動提基圖騰以達成隱藏任務卡上的排列目標，是一款充滿心機與動態變化的經典遊戲。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>由於該校設計直接參考本遊戲，推薦教師或團隊直接體驗其原始機制，中文版十分普及，對轉化規則極具參考價值。</p>
+                        <a href="https://www.google.com/search?q=推倒提基+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 妙語說書人 (Dixit)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">這是一款透過充滿幻想的插畫進行說故事、表達想法、傾聽他人猜測的經典派對桌遊。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>非常適合用來引導幼兒「說一說自己想法」與「聽別人說話」的口語表達及 SEL 同理心能力。中文版在任何書局、桌遊店都可輕易購得。</p>
+                        <a href="https://www.google.com/search?q=妙語說書人+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+|
+改編者
+(學校名稱) |
+福德國小附設幼兒園
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+黑猩猩的好朋友
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+推倒提基
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+■生理性別、性傾向、性別特質與性別認同多樣性的尊重
+身體自主權的尊重與維護
+性騷擾、性侵害與性霸凌的防治
+■性別權力關係與互動
+■性別與多元文化
+|
+|
+■性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸 凌的防治(制)能力。
+性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+■性 C3 尊重多元文化，關注本土的性別 平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+1. 關係
+2. 價值觀、權利與性
+■3. 理解性別 女性也能成為領導角色
+4. 暴力與安全保障
+5. 健康與福祉技能
+6. 人體與發育
+7. 性與性行為
+8. 性與生殖健康
+|
+SDGS |
+SDG 1   SDG 2  SDG 3  ■ SDG 4  ■ SDG 5   SDG 6
+SDG 7   SDG 8  SDG 9   SDG 10  SDG 11  SDG 12
+■ SDG 13  SDG 14 ■ SDG 15  SDG 16  SDG 17
+|
+SEL |
+情緒調節
+認知調節
+社交技巧
+公共精神
+自我認同與自主能動性
+|
+性別平等教育
+學習指標
+(參考附件) |
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+身體動作與健康
+認知
+情緒
+■語文 語-中-2-2-2以清晰的口語表達想法
+美感
+■社會 社-大-3-1-2欣賞自己的特質，喜歡自己
+|
+活動方式 |
+玩法一              (層級-認識重要配件)
+使用配件：
+手卡、提問卡、功能卡、彩虹磚頭、底板
+人數：2-4人
+玩法(列點)
+抽一張提問卡，依照提問卡內容完成挑戰(說一說自己想法)
+使用功能卡移動彩虹磚頭
+換下一位玩家
+遊戲結束/計分方式
+遊戲結束：功能卡用完或進行固定回合數（如10回合）即進入結算階段。
+計分方式：每位玩家依照自己的手卡計分，分數最高者獲勝。
+|
+|
+玩法二            (層級-性平概念)
+使用配件
+人數
+三、玩法(列點)
+四、遊戲結束/計分方式
+|
+|
+玩法三               (層級-SEL)
+使用配件
+人數
+玩法(列點)
+四、遊戲結束/計分方式
+|
+活動配件 |
+手卡、提問卡、功能卡、彩虹磚頭、底板
+|
+需要教授、講師的支持或幫助
+(實作中發現的困難) |</div>
+                </details>
+            </article>
+
+            <!-- ==========================================================================
+               幸安國小附設幼兒園 頁面
+               ========================================================================== -->
+            <article id="xing-an" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">C</span>
+                        幸安國小附設幼兒園
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">保持好奇心：從霍金看見宇宙與性別的無限可能</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《保持好奇心！史蒂芬．霍金的生命故事》、《以馬內利，夢想起飛了》、《我還有一隻腳》</p>
+                        <p><strong>原始參考桌遊：</strong>搞笑瑜珈、鼠來堡、迷宮滾球</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>結合霍金與以馬內利等身心障礙者勇敢逐夢的故事，將「身心限制」體驗轉化為遊戲的體感核心機制。</li>
+                <li><strong>核心機制：</strong>4人合作拉繩控制太空船（中空圓環），運送彈珠（生命值）在方格板上移動，需避開黑洞（鏤空洞口）抵達終點。</li>
+                <li><strong>融入概念：</strong>引入「身體限制卡」、「霍金挑戰卡」（限制控繩部位，如改用手肘或下巴），讓幼兒感同身受身體限制者的不便。並設計了犯錯時全員齊跳「鼓勵之舞」的溫暖支持機制。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖 給予支持與鼓勵</h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">
+            幸安附幼的設計令人驚艷！這是一套完成度極高、且非常具有創意的「共感學具」。
+            透過「拉繩太空船」與「霍金挑戰卡」的設計，玩家不只是聽故事，而是用自己的身體去體驗「身體受限時，如何與他人合作達成目標」，這對培養幼兒對身心障礙者的同理心與多元包容具有無可比擬的效果！
+            而「鼓勵之舞」更是神來之筆，將犯錯與失敗轉化為正面且歡樂的集體社交支持，徹底實踐了 SEL 心理韌性與團隊合作的真諦！
+        </p>
+                </div>
+
+                <h2 class="section-headline">🚀 進一步發展的方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li><strong>簡化規則與配件以利幼兒專注：</strong>玩法三的元素非常多（寶石、四種功能卡、醫療站/觀測站的開關、鼓勵之舞、推板塊）。對幼兒來說，要同時控制平衡、注意卡牌限制、還要記憶複雜的地圖功能會有些手忙腳亂。建議將「推動板塊」和「寶石收集」進行適度簡化。</li>
+                <li><strong>物理配件的友善度調整：</strong>繩子控制中空環的穩定性對幼兒是高難度挑戰。建議太空船載具的圓環可設計有深淺不同的凹槽：初階版凹槽較深，彈珠不易掉落；高階版（霍金挑戰）凹槽較淺，增加難度。這能適應小班到大班不同年齡的發展水準。</li>
+                <li><strong>遊戲盒尺寸與結構強度：</strong>拉繩在遊玩時會對紙盒產生較大拉力，可採用市售「滑溜騎士 (Slide Quest)」的塑膠底盤與槓桿結構作為開發參考，確保學具耐用度。</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 滑溜騎士 (Slide Quest)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">玩家合作利用紙盒四邊的黃色槓桿來傾斜底盤，控制底座上有滾珠的騎士移動，避開陷阱並推動敵人到達終點。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這與幸安的「拉繩控球」概念完全一致，是現成且大受好評的物理合作遊戲，有中文版且極易買到，是完美的結構參考。</p>
+                        <a href="https://www.google.com/search?q=滑溜騎士+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 搞笑瑜珈 (Yogi)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">玩家輪流抽卡，並必須維持卡片指定的姿勢（如：手肘高於肩膀、卡牌放在頭頂上等）直到遊戲結束。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這款桌遊與幸安的「身體限制卡」概念完全相同，非常適合體驗身體受到特定規範時的趣味與挑戰，中文版在台灣非常普及。</p>
+                        <a href="https://www.google.com/search?q=搞笑瑜珈+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+保持好奇心：從霍金看見宇宙與性別的無限可能
+|
+改編者
+(學校名稱) |
+幸安國小附設幼兒園
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+1.保持好奇心！史蒂芬．霍金的生命故事
+作者：凱瑟琳・克魯爾、保羅・布魯爾
+繪者：鮑瑞斯・庫利柯夫
+譯者：游珮芸
+出版社：維京國際
+2.以馬內利，夢想起飛了：以馬內利．奧福蘇．葉波的真實故事
+作者：羅莉・安・湯普森
+繪者：尚恩・奎爾斯
+譯者：劉淑雯
+出版社：小魯文化
+3.我還有一隻腳
+作者：周大觀
+繪出版社：遠流
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+1.搞笑瑜珈（參考身體限制動作、趣味動作）
+2.鼠來堡（參考遊戲盒有洞底座、板塊設計、推板塊機制）
+影片介紹：https://www.youtube.com/watch?v=jW1oeFhbtfo
+遊戲盒基底與板塊設計(0:27)、推板塊機制(2:40)
+3.迷宮滾球（參考拉繩移動球方式）
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+生理性別、性傾向、性別特質與性別認同多樣性的尊重
+身體自主權的尊重與維護
+性騷擾、性侵害與性霸凌的防治
+性別權力關係與互動
+性別與多元文化
+|
+|
+性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸 凌的防治(制)能力。
+性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+性 C3 尊重多元文化，關注本土的性別 平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+1. 關係   1.3寬容、包容與尊重
+2. 價值觀、權利與性
+3. 理解性別  3.2性別平等、刻板印象與偏見
+4. 暴力與安全保障
+5. 健康與福祉技能
+6. 人體與發育
+7. 性與性行為
+8. 性與生殖健康
+|
+SDGS |
+SDG 1   SDG 2  SDG 3   SDG 4   SDG 5   SDG 6
+SDG 7   SDG 8  SDG 9   SDG 10  SDG 11  SDG 12
+SDG 13  SDG 14 SDG 15  SDG 16  SDG 17
+|
+SEL |
+情緒調節
+認知調節   目標設定
+社交技巧   團隊合作、建立關係、同理心
+公共精神
+自我認同與自主能動性  自信心、自我效能感、成長型心態、心理韌性
+|
+性別平等教育
+學習指標
+(參考附件) |
+2-2 參與各種活動和運用各種資源，不受性別限制
+性平-小中-2-2-1嘗試參與各類型的活動，不受性別限制
+性平-大-2-2-1樂於參與各類型的活動，不受性別限制
+3-1 肯定自己與尊重他人的特質，不受性別的限制
+性平-小中-3-1-1喜歡自己的特質，不受性別限制
+性平-大-3-1-1欣賞自己與他人的特質，不受性別限制
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+身體動作與健康
+身-小-2-1-1在穩定性及移動性動作中練習平衡與協調
+身-中大-2-1-1在合作遊戲的情境中練習動作的協調與敏捷
+認知
+認-小-3-1-1探索解決問題的可能方法
+認-中-3-1-1參與討論解決問題的可能方法並實際執行
+認-大-3-1-1與同伴討論解決問題的方法，並與他人合作實際執行
+情緒
+語文
+美感
+社會
+社-小-2-2-3 理解他人的感受，展現關懷的行動
+社-中大-2-2-3 理解他人的感受和需要，展現同理或關懷的行動
+社-小中大-3-3-3 尊重與自己不同性別、年齡、身心狀態的人
+|
+活動方式 |
+玩法一   星際領航員    (層級-認識重要配件)
+一、使用配件
+1.遊戲盒底座 (內嵌7*7的格子，其中16格無洞、33格有洞)
+2.地圖板塊*34 (星球站12個、黑洞8個、一般航道14個、星星航道9個)
+3.方格版 (33格洞、2格起/終點、3格醫療站、5格觀測站、6格一般航道)
+4.太空船載具 (中空圓環綁上4條繩子，每條繩子與魔鬼氈環連接)
+5.彈珠*5
+人數
+最佳4人
+三、玩法(列點)
+◎遊戲準備
+1.隨機選擇33個板塊放在洞上，並蓋上方格版。
+2.將太空載具放在起點，中間放一顆彈珠。
+3.玩家各拿一條控制繩，坐/站在遊戲盒四角方位。
+◎遊戲進行
+1.玩家透過拉繩控制太空船移動至終點。
+2.若彈珠掉入黑洞，需從最近的停靠點(醫療站/觀測站)再次出發，並放入新彈珠。*1
+四、遊戲結束/計分方式
+1.(任務成功)太空船運送彈珠抵達終點。
+2.(任務失敗)在抵達終點前彈珠全部掉入黑洞。
+*遊戲機制補充：
+1.彈珠掉黑洞 → 從最近的停靠點(醫療站/觀測站)出發，停靠點不觸發功能
+|
+|
+玩法二   平權宇宙大變動   (層級-性平概念)
+使用配件
+1.遊戲盒底座 (內嵌7*7的格子，其中16格無洞、33格有洞)
+2.地圖板塊34個 (星球站12個、黑洞8個、一般航道14個、星星航道9個)
+3.方格版 (33格洞、2格起/終點、3格醫療站、5格觀測站、6格一般航道)
+4.太空船載具 (中空圓環綁上4條繩子，每條繩子與魔鬼氈環連接)
+5.彈珠*5
+6.寶石*9 (紅/粉/橘/黃/綠/藍/紫/灰/白)
+7.星球任務卡32張 (身體限制卡14張、推板塊卡12張、事件卡6張)
+8.卡片立座*12
+9.抽牌架*2
+人數
+最佳4人
+三、玩法(列點)
+◎遊戲準備
+1.隨機選擇33個板塊放在洞上，並蓋上方格版。
+2.將太空載具放在起點，中間放一顆彈珠。
+3.將星球任務卡洗牌放置一旁。
+4.玩家共同編創鼓勵之舞。(幾個簡單動作即可)
+5.玩家各拿一條控制繩，坐/站在遊戲盒四角方位。
+◎遊戲進行
+1.玩家透過拉繩控制太空船移動至終點，且需收集至少1顆寶石。
+2.若彈珠掉入黑洞，需從最近的停靠點(醫療站/觀測站)再次出發，並放入新彈珠。*1
+3.經過星球站時每位玩家抽1張星球任務卡執行任務。*2
+4.當經過的板塊有星星符號時，拿取對應顏色的寶石放置在終點。
+四、遊戲結束/計分方式
+1.(任務成功)太空船運送彈珠抵達終點且收集至少1顆寶石。
+2.(任務失敗)在抵達終點前彈珠全部掉入黑洞；或抵達終點時未收集到任何寶石。
+*遊戲機制補充：
+1.彈珠掉黑洞 → 從最近的停靠點(醫療站/觀測站)出發，停靠點不觸發功能
+2.星球站 → 經過時停下，每人抽卡並執行任務，保留卡最多3張
+(1)身體限制卡：需保留，移動太空船時執行任務，在停靠點時可休息
+．超過保留數、卡片內容矛盾---請求隊友救援 大家跳鼓勵之舞後棄掉一張舊牌
+．違反任務時---大家一起跳鼓勵之舞再繼續
+(2)推動板塊卡---依照指定位置推動板塊
+|
+|
+玩法三   極限星際救援   (層級-SEL)
+使用配件
+1.遊戲盒底座(內嵌7*7的格子，其中16格無洞、33格有洞)
+2.地圖板塊34個(星球站12個、黑洞8個、一般航道14個、星星航道9個)
+3.方格版(33格洞、2格起/終點、3格醫療站、5格觀測站、6格一般航道)
+4.太空船載具(中空圓環綁上4條繩子，每條繩子與魔鬼氈環連接)
+5.彈珠*5
+6.寶石*9(紅/粉/橘/黃/綠/藍/紫/灰/白)
+7.星球任務卡46張(身體限制卡14張、推板塊卡18張、事件卡6張、互動卡8張)
+8.卡片立座*12
+9.抽牌架*2
+10.透色圓片*8
+人數
+最佳4人
+玩法(列點)
+◎遊戲準備
+1.隨機選擇33個板塊放在洞上，並蓋上方格版。
+2.將太空載具放在起點，中間放一顆彈珠。
+3.將星球任務卡洗牌放置一旁。
+4.玩家共同編創鼓勵之舞。(幾個簡單動作即可)
+5.玩家各拿一條控制繩，坐/站在遊戲盒四角方位。
+◎遊戲進行
+1.玩家透過拉繩控制太空船移動至終點，且需收集3顆寶石在太空船上。*5
+2.若彈珠掉入黑洞，需從最近的停靠點(醫療站/觀測站)再次出發，並放入新彈珠。*1
+3.經過星球站時每位玩家抽1張星球任務卡執行任務。*2
+4.經過醫療站時，可選擇停留休息或觸發功能：每人移除1張身體限制卡。*3
+5.經過觀測站時，可選擇停留休息或觸發功能：自由推動一塊板塊。*4
+6.當經過的板塊有星星符號時，拿取對應顏色的寶石放置在太空船載具上。*5
+四、遊戲結束/計分方式
+1.(任務成功)太空船運送彈珠抵達終點且載具上有3顆寶石。
+2.(任務失敗)在抵達終點前彈珠全部掉入黑洞；或抵達終點時未承載3顆寶石。
+*遊戲機制補充：
+1.彈珠掉黑洞 → 從最近的停靠點(醫療站/觀測站)出發，停靠點不觸發功能
+2.星球站 → 經過時停下，每人抽卡並執行任務，保留卡最多3張
+(1)身體限制卡：需保留，移動太空船時執行任務，在停靠點時可休息
+．超過保留數、卡片內容矛盾---請求隊友救援 大家跳鼓勵之舞後棄掉一張舊牌
+．違反任務時---大家一起跳鼓勵之舞再繼續
+(2)互動卡：需保留，每次在星球站抽卡前執行
+．超過保留數---請求隊友救援 大家跳鼓勵之舞後棄掉一張舊牌
+(3)推動板塊卡---依照指定位置推動板塊
+(4)事件卡---依照內容執行
+3.醫療站 → 休息 全員各棄一張卡牌
+．關閉---每座醫療站觸發功能後即關閉，只剩休息作用(放上透色圓片標示)
+．重啟---3座醫療站皆關閉後可全部重啟
+4.觀測站 → 休息 自由推動一塊板塊
+．關閉---每座觀測站觸發功能後即關閉，只剩休息作用(放上透色圓片標示)
+5.收集3顆寶石(不限顏色) → 限玩法三，經過星星板塊時拿取對應顏色寶石放載具上
+．寶石掉落---放1顆回備用區，其餘放回載具。需再經過星星板塊以收集寶石
+進階玩法  霍金挑戰模式
+☆★遊戲開始前每人抽取霍金挑戰卡(指定控制繩子的身體部位)，其餘玩法比照玩法三。
+AI生成遊戲模擬圖，圖中仍有待修正之處，僅供參考
+AI生成遊戲模擬圖，圖中仍有待修正之處，僅供參考
+|
+活動配件 |
+1.遊戲盒底座(內嵌7*7的格子，其中16格無洞、33格有洞)
+2.地圖板塊34個(星球站12個、黑洞8個、一般航道14個、星星航道9個)
+改編
+改編
+3.方格版(33格洞、2格起/終點、3格醫療站、5格觀測站、6格一般航道)
+變成
+變成
+蓋住
+蓋住
+改編
+改編
+變成
+變成
+蓋住
+蓋住
+4.太空船載具(中空圓環綁上4條繩子，每條繩子與魔鬼氈環連接)
+AI生成，實際繩子長度預計會更長
+5.彈珠*5 (代表遊戲的5次生命值)
+6.寶石*9 (紅/粉/橘/黃/綠/藍/紫/灰/白，對應星星板塊)
+7.星球任務卡46張 (身體限制卡14張、推板塊卡18張、互動卡8張、事件卡6張)  詳細內容與張數比例待補充調整…
+(1)推板塊卡：推一塊板塊並指定行列與方向，執行完棄牌
+(2)互動卡：(抽到需保留)每次在星球站抽卡前執行，執行完才抽卡
+(3)身體限制卡：(抽到需保留)移動太空船的過程中保持指定動作(在醫療站/觀測站/星球站停留時可休息)
+(4)事件卡：執行完棄牌
+8.卡片立座*12 (方便觀看每個人保留的卡片)
+9.抽牌架*2 (放遊戲盒兩邊，方便玩家抽星球任務卡)
+10.透色圓片*8 (標示已觸發功能的醫療站或觀測站)
+11.霍金挑戰卡9張 (進階玩法使用，指定控繩的身體部位)
+|
+需要教授、講師的支持或幫助
+(實作中發現的困難) |
+1.目前為初步構想，不確定實際製作與遊玩的可行性及難易度，或是整體來說是否會太多元素。
+2.考慮趣味性以及避免遊戲陷入規則漏洞而有設置一些機制，考量是否會太過複雜或困難。(例如：收集星星機制是為了避免遊戲最後變成大家只走最短路線；玩法三變成載星星是想要避免玩家拉繩爆衝。)
+3.關於醫療站、觀測站、星球站、黑洞等有功能板塊的比例分配，以及固定格上功能站的分配位置。(有參考AI建議，但未實作仍不知效果)
+4.關於星球任務卡內的比例，以及身體限制卡的內容可行性與困難度。
+5.最佳遊戲人數4人，若要調整可更多人玩法，還可以怎麼調整？(目前想法可以2人一組，拉繩者閉眼，另一人為提示引導者；或多的一人可擔任抽卡與推板塊者)
+6.若方案可行，關於遊戲盒大小是否需調整？(目前皆預設鼠來堡遊戲盒大小)
+|
+機制 |
+玩法一 |
+玩法二 |
+玩法三
+|
+黑洞 |
+✔ |
+✔ |
+✔
+|
+星球站抽卡 |
+✘(只有休息) |
+✔身體限制、推板塊、事件卡 |
+✔身體限制、推板塊、事件卡、互動卡
+|
+鼓勵之舞 |
+✘ |
+✔ |
+✔
+|
+收集星星 |
+✘ |
+✔（1顆即可） |
+✔（3顆，有掉落機制）
+|
+觀測站 |
+✘(只有休息) |
+✘(只有休息) |
+✔
+|
+醫療站 |
+✘(只有休息) |
+✘(只有休息) |
+✔
+|
+|
+|
+|</div>
+                </details>
+            </article>
+
+            <!-- ==========================================================================
+               東門國小附設幼兒園 頁面
+               ========================================================================== -->
+            <article id="dong-men" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">D</span>
+                        東門國小附設幼兒園
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">我的想法會發光</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《為冥王星命名的女孩-威妮夏 伯尼的故事》、《打破框架的天文學家-瑪麗亞 米契爾的故事》</p>
+                        <p><strong>原始參考桌遊：</strong>小丑馬戲團、大頭娃娃</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>將宇宙探索、星球命名與女天文學家的堅毅精神融入遊戲中，打破「女生不適合學科學」的偏見。</li>
+                <li><strong>核心機制：</strong>設計「雙面遊戲板」（A面合作、B面競賽）。玩法一為星球命名與記憶搶答；玩法二與三結合了擲骰移動與「將星星配件疊在棋子托盤上」的物理平衡考驗。</li>
+                <li><strong>融入概念：</strong>認識女性天文學家角色、鍛鍊口語表達（命名與分享原因）與傾聽（回答他人星球的名字及理由）。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖 給予支持與鼓勵</h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">
+            東門附幼的設計非常精緻且有深度！以宇宙、星星為意象，成功地將科學史上的女力故事轉化為幼兒遊戲。
+            最出彩的是<strong>「托盤疊星星」的體感機制</strong>，把抽象的「命名成就」具體化為疊高的實體星星，既考驗手部穩定度，又充滿遊戲樂趣！
+            同時，B面「傾聽格」的設計非常巧妙，強迫孩子去注意「別人命名了什麼、為什麼」，直接落實了「傾聽與尊重」的社交核心能力！
+        </p>
+                </div>
+
+                <h2 class="section-headline">🚀 進一步發展的方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li><strong>托盤疊星星的物理材質改良：</strong>星星配件如果較滑，放在棋子上的托盤移動時很容易翻覆，可能導致幼兒因過度挫折而氣餒。建議棋子托盤設計有淺凹槽，或星星配件採用有凹凸防滑刻紋的材質（例如木製梅花型積木或樂高積木），讓幼兒在移動棋子時能夠專注於走步。</li>
+                <li><strong>發現卡與挑戰卡的平衡：</strong>挑戰卡的「失去星星」可能會讓好不容易疊高星星的幼兒大哭。建議將挑戰卡的負面效果改為「需暫停一次，由大家一起為他加油支持」，或「退後一步，但可移除一張限制卡」，以正向支持代替單純懲罰。</li>
+                <li><strong>命名主題卡的引導：</strong>幼兒的字彙量有限，命名主題卡（如動物、食物）是非常好的輔助。可以額外提供一些「圖案提示卡」，當幼兒命名卡關時，可以抽一張圖案卡來發想。</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 大頭娃娃 (Toddles-Bobbles)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">玩家輪流翻牌，當翻出新娃娃時要為他取名，之後再次出現相同娃娃時，所有人要搶答出他的名字，最快喊出者得牌。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這與東門的「星球命名家」玩法完全一致，非常能鍛鍊孩子的想像力與瞬間記憶力，中文版在全台各大通路皆非常容易購得。</p>
+                        <a href="https://www.google.com/search?q=大頭娃娃+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 超級犀牛 (Rhino Hero)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">玩家必須合作或競爭，用折疊紙板作為牆壁與地板，一層層往上疊建高樓，並把木製犀牛放在指定位置而不讓大樓倒塌。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這是一款最經典的手眼協調與堆疊桌遊，與「托盤疊星星」的物理平衡感相通，規則極為簡單易懂，中文版非常普及。</p>
+                        <a href="https://www.google.com/search?q=超級犀牛+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+我的想法會發光
+|
+改編者
+(學校名稱) |
+東門國小附設幼兒園
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+為冥王星命名的女孩-威妮夏 伯尼的故事(Alice B. McGinty/維京)
+打破框架的天文學家-瑪麗亞 米契爾的故事(Laura Alary /維京)
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+小丑馬戲團
+（遊戲版與板塊配置、角色放置）
+|
+大頭娃娃
+（命名）
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+生理性別、性傾向、性別特質與性別認同多樣性的尊重
+身體自主權的尊重與維護
+性騷擾、性侵害與性霸凌的防治
+性別權力關係與互動
+性別與多元文化
+|
+|
+性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸 凌的防治(制)能力。
+性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+性 C3 尊重多元文化，關注本土的性別 平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+1. 關係    1.3寬容、包容與尊重
+2. 價值觀、權利與性   2.1價值觀與性
+3. 理解性別  3.2性別平等、刻板印象與偏見
+4. 暴力與安全保障
+5. 健康與福祉技能
+6. 人體與發育
+7. 性與性行為
+8. 性與生殖健康
+|
+SDGS |
+SDG 1   SDG 2  SDG 3   SDG 4   SDG 5   SDG 6
+SDG 7   SDG 8  SDG 9   SDG 10  SDG 11  SDG 12
+SDG 13  SDG 14 SDG 15  SDG 16  SDG 17
+|
+SEL |
+情緒調節
+認知調節
+社交技巧     分享與勇氣
+公共精神
+自我認同與自主能動性
+|
+性別平等教育
+學習指標
+(參考附件) |
+覺察與辨識1-2辨識性別的多元角色，避免形成性別歧視與偏見
+性平-小-1-2-2覺察生活中不同性別的人及其工作
+性平-中、大-1-2-2認識不同性別的人可從事多元的職業及角色活動
+溝通與調整2-2參與各種活動和運用各種資源，不受性別限制
+性平-小、中-2-2-1嘗試參與各種類型的活動，不受性別限制
+性平-大-2-2-1樂於參與各種類型的活動，不受性別限制
+性平-小-2-2-2嘗試使用生活中各種物品
+性平-中2-2-2使用生活中各種資源不受性別限制
+性平-大-2-2-2樂於和相同或不同性別的人，共享生活中各種資源
+關懷與尊重3-1肯定自己與尊重他人的特質，不受性別的限制
+性平-小、中-3-1-1喜歡自己的特質，不受性別限制
+性平-大-3-1-1欣賞自己與他人的特質，不受性別限制
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+身體動作與健康
+認知
+情緒 情-2-1合宜地表達自己的情緒；
+情-中大-2-1-3以符合社會文化的方式來表達自己的情緒
+語文 語-2-3敘說生活經驗；語-中大-2-3-2說出簡單的因果關係
+美感
+社會:社-2-2同理他人，並與他人互動；
+社-中-2-2-1表達自己並願意聆聽他人想法
+社-大-2-2-1聆聽他人並正向回應
+|
+活動方式 |
+玩法一   星球命名家   (層級-認識重要配件)
+一、使用配件
+星球卡（每種圖案2張）
+人數:2~6人
+三、玩法
+將所有星球卡洗牌後，背面朝上排列於桌面。
+玩家輪流翻開1張星球卡。
+若翻開的是第一次出現的星球卡：
+(1) 由翻牌玩家為該星球命名。
+(2) 分享命名原因。
+(3) 該星球卡保持翻開狀態，放置於桌面。
+若翻開的是第二次出現的相同星球卡：
+(1) 所有玩家可立即搶答該星球的名稱。
+(2) 最先正確說出名稱的玩家獲得該組2張星球卡。
+(3) 取得的星球卡移出遊戲區。
+遊戲持續進行至所有星球卡皆被配對完成。
+四、遊戲結束／計分方式
+當所有星球卡皆被取得後，遊戲結束。
+計算各玩家獲得的星球卡組數。
+獲得最多組星球卡的玩家獲勝。
+|
+|
+玩法二   星光探險隊   (層級-性平概念)
+使用配件
+遊戲板、路徑卡(包含+星格及天文學家格)、星球卡、星星配件、威妮夏棋子、天文學家卡（發現卡、挑戰卡，與性平相關內容）、骰子
+人數:2~4人(合作遊戲)
+三、玩法
+四、遊戲結束/計分方式
+將路徑卡洗牌後，依照遊戲板上的位置擺放，全部擺放完成後翻開朝上。
+翻開3張星球卡，由玩家共同為星球命名並分享命名原因。
+將威妮夏棋子放置於起點。
+玩家輪流擲骰並移動棋子。
+依照停留的路徑卡執行效果。
+(1) ＋1星格
+說出1張星球卡的名稱。
+成功可獲得1顆星星。
+(2) ＋2星格
+說出2張星球卡的名稱。
+成功可獲得2顆星星。
+(3) ＋3星格
+說出3張星球卡的名稱。
+成功可獲得3顆星星。
+(4) 完成回答後：
+①將回答的星球卡移出遊戲區。
+②補上相同數量的新星球卡。
+③共同為新星球命名並分享原因。
+(5) 天文學家格
+抽取1張天文學家卡並執行效果。
+發現卡：
+獲得星星、前進格數或其他有利效果。
+挑戰卡：
+失去星星、後退格數或其他挑戰效果。
+獲得的星星需疊放於女天文學家棋子的托盤上。
+若星星掉落，掉落的星星需移出遊戲，不可放回。
+玩家共同合作，幫助女天文學家蒐集足夠的星星並抵達終點。
+四、遊戲結束／計分方式
+當威妮夏棋子抵達終點時，遊戲結束。
+檢查托盤上的星星數量是否達成任務目標。
+若達成指定星星數量，則全體玩家合作獲勝。
+若未達指定星星數量，則挑戰失敗。
+|
+|
+玩法三    星光命名賽    (層級-SEL)
+使用配件
+環形遊戲板、路徑卡(包含分享格、傾聽格、幸運星格及流星格)、星球卡、命名主題卡、星星配件、女天文學家棋子、骰子。
+人數:2~4人(比賽遊戲)
+玩法
+每位玩家選擇1個女天文學家棋子，放置於環形遊戲板的起始位置。
+遊戲開始前，抽取1張命名主題卡，作為本局共同的命名方向（例如：動物、食物、植物、交通工具等）。
+每位玩家抽取1張星球卡，依照命名主題為星球命名，並分享命名原因，將星球卡放置於自己的展示區。
+玩家輪流擲骰，依骰子點數移動自己的棋子，沿環形路線持續前進。
+棋子停留於「分享格」時：
+(1) 抽取1張新的星球卡。
+(2) 依照本局命名主題為星球命名。
+(3) 分享命名原因後，放置於自己的展示區。
+(4) 完成分享後，可獲得1顆星星。
+棋子停留於「傾聽格」時：
+(1) 選擇 1 位其他玩家。
+(2) 由該玩家從自己的展示區選擇 1 張星球卡進行提問。
+(3) 回答者須正確說出該星球的名稱及命名理由。
+(4) 名稱及命名理由皆回答正確，即可獲得1顆星星。
+(5) 回答成功後，該張星球卡自展示區移出。
+棋子停留於「幸運星格」時：
+直接獲得1顆星星。
+棋子停留於「流星格」時：
+失去 1 顆星星。
+玩家將獲得的星星疊放於自己的女天文學家棋子托盤上，往上疊高，持續累積星星數量。
+四、遊戲結束/計分方式
+遊戲採環形路線進行，不設終點，玩家可持續繞行遊戲板。
+率先蒐集到指定數量星星（例如 10 顆）的玩家，即獲得勝利。
+|
+活動配件 |
+雙面遊戲板 × 1
+A 面：合作冒險路線（玩法二）
+B 面：環形競賽路線（玩法三）
+女天文學家棋子 × 6
+星星配件（可堆疊）× 40 顆
+骰子 × 1
+星球卡（每種圖案 2 張）
+命名主題卡
+路徑卡
+發現卡
+挑戰卡
+|
+需要教授、講師的支持或幫助
+(實作中發現的困難) |</div>
+                </details>
+            </article>
+
+            <!-- ==========================================================================
+               太平國小附幼 頁面
+               ========================================================================== -->
+            <article id="tai-ping" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">E</span>
+                        太平國小附幼
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">勇氣音樂島</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《敲打夢想的女孩》、《歌詠生命的妮娜》</p>
+                        <p><strong>原始參考桌遊：</strong>UNO、拔毛運動會</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>以兩本打破性別框架的女性音樂家（打擊樂與爵士歌手）為起點，設計出與樂器、聲音、節奏相關的漸進式三合一遊戲。</li>
+                <li><strong>核心機制：</strong>玩法一為音樂 UNO；玩法二為合作收集樂器卡解鎖 5 位歷史性平音樂家；玩法三為棋子地圖，超車時需將手中樂器「送給需要的人」（溫暖快遞），最後全員大合奏。</li>
+                <li><strong>融入概念：</strong>打破「女生不能敲擊爵士鼓、男生不能當溫柔歌手」等性別刻板印象，並透過贈卡與擊掌實踐 SEL 互助精神。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖 給予支持與鼓勵</h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">
+            太平附幼的設計音樂感十足，讓人熱血沸騰！透過點讀筆錄製樂器聲，將「聲音」帶入桌遊，非常符合幼兒的感官學習需求。
+            最令人激賞的是<strong>玩法三的「溫暖快遞」機制</strong>：一般遊戲中超越對手是競爭，這裡卻設計成「超車時要把對方需要的樂器送給對方」，這將「競爭」巧妙轉化為「互助」，是非常高明的 SEL 遊戲設計！
+            最後的《We Will Rock You》大合奏更是給孩子極大的凝聚力與集體成就感！
+        </p>
+                </div>
+
+                <h2 class="section-headline">🚀 進一步發展的方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li><strong>提高點讀筆的通用性與備用方案：</strong>點讀筆錄音貼紙在卡牌上如果磨損可能失效。建議點讀碼直接印刷在卡牌上，或者如果沒有點讀筆，也可以在說明書上印一張「QR code 音樂播放單」，讓老師用手機掃描直接播放對應音樂家的音樂，提高學具的通用性。</li>
+                <li><strong>優化玩法二的策略選擇：</strong>玩法二主要是簡單的牌面配對。可以加入「指揮家卡」的靈活運用，例如出指揮家卡時，可以當作彩虹萬用卡，幫任意一位音樂家補上他缺少的任意樂器，增加遊戲的決策感與合作彈性。</li>
+                <li><strong>大合奏的節奏引導設計：</strong>幼兒的節奏感還在發展中，大合奏可能變成混亂敲打。可以附帶一張「節奏指揮板」，用顏色代表不同的樂器，由一位幼兒當指揮家，指到紅色大家搖沙鈴，指到藍色敲鼓，這能讓「大合奏」更有秩序和遊戲性。</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 搖滾節奏 (Rhythm and Blue)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">玩家們必須一邊用手在大腿和掌心拍打出「砰砰、啪」（We Will Rock You 的節奏），一邊做出自己的手勢暗號並指名下一個人。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這是一款完全以 We Will Rock You 為基礎的音樂節奏桌遊，與太平玩法三的大合奏氣氛完全重合，好找且極具派對效果，有出中文版。</p>
+                        <a href="https://www.google.com/search?q=搖滾節奏+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 UNO Card Game</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">最經典的卡牌對應遊戲，玩家輪流出與上一張相同顏色或數字/功能的卡牌，最快出完者獲勝。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>UNO 是玩法一「音樂 UNO」的原始原型，任何家長或幼兒都能在 1 分鐘內上手，中文版本可在全台各大超市、玩具店輕易買到。</p>
+                        <a href="https://www.google.com/search?q=UNO+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+勇氣音樂島
+|
+改編者
+(學校名稱) |
+太平國小附幼:林語柔.郭玟彤
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+1.敲打夢想的女孩
+2.歌詠生命的妮娜(作者：崔西N.塔德（Traci N. Todd）)
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+UNO |
+拔毛運動會
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+▓生理性別、性傾向、性別特質與性別認同多樣性的尊重
+身體自主權的尊重與維護
+性騷擾、性侵害與性霸凌的防治
+▓性別權力關係與互動
+▓性別與多元文化
+|
+|
+▓性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸凌的防治(制)能力。
+▓性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+▓性 C3 尊重多元文化，關注本土的性別平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+1. 關係
+▓2. 價值觀、權利與性
+3. 理解性別
+4. 暴力與安全保障
+5. 健康與福祉技能
+6. 人體與發育
+7. 性與性行為
+8. 性與生殖健康
+|
+SDGS |
+SDG 1   SDG 2  SDG 3  ▓SDG 4  ▓ SDG 5   SDG 6
+SDG 7  ▓ SDG 8  SDG 9  ▓ SDG 10  SDG 11  SDG 12
+SDG 13  SDG 14 SDG 15  SDG 16  SDG 17
+|
+SEL |
+▓ 情緒調節
+認知調節
+社交技巧
+公共精神
+自我認同與自主能動性
+|
+性別平等教育
+學習指標
+(參考附件) |
+覺察與辨識
+1-2辨識性別多元角色避免形成型別歧視與偏見。
+性平-中、大-1-2-1理解不同性別的人都可作各種生活事務。
+性平-小-1-2-2覺察生活中不同性別的人及其工作。
+性平-中、大-1-2-2認識不同性別的人可從事多元的職業及角色活動。
+溝通與調整
+2-2參與各種活動和運用各種資源，不受性別限制。
+性平-小-中-2-2-1嘗試參與各種類型的活動，不受性別限制。
+性平-大-2-2-1樂於參與各種類型的活動，不受性別限制。
+性平-大-2-2-2樂於和相同或不同性別的人，共享生活中各種資源。
+關懷與尊重
+3-1肯定自己與尊重他人特質，不受性別限制。
+性平-小、中-3-1-1喜歡自己的特質，不受性別限制。
+性平-大-3-1-1欣賞自己與他人的特質，不受性別限制。
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+身體動作與健康
+▓認知:認-2-3 整理文化產物訊息間的關係
+認-小-2-3-1依據生活物件的特性與功能歸類
+情緒
+語文
+▓美感:社-2-2 同理他人，並 與他人互動
+社-小中-2-2-3 依據活動的程序與他人共同進行活動
+▓社會:美-2-2 運用各種形式 的藝術媒介進行創作
+美-中-2-2-3 以哼唱、打擊樂器或身體動作反應聽到的旋律或節奏
+|
+活動方式 |
+玩法一音樂UNO GO!(層級-認識重要配件)
+使用配件:
+1.基礎樂器卡 (共 60 張)
+紅色沙鈴：15 張 鼓：15 張 鋼琴：15 張 吉他：15 張
+點讀筆(錄音貼紙:介紹樂器的聲音)
+2.特殊功能卡 (共 15 張)
+🧔 指揮家（5 張）：變色卡，出牌者可指定下位玩家必須出的顏色。
+🛑 休止符（5 張）：跳過卡，下一位玩家暫停出牌一次。
+🔄 旋轉箭頭（5 張）：迴轉卡，遊戲出牌順序立刻反轉（順時針變逆時針，反之亦然）。
+人數:2-4人
+玩法(列點)
+1.初始發牌：每位玩家分發 5 張卡牌，其餘卡牌疊好面朝下放置於桌面中央，作為「抽牌堆」。從抽牌堆翻開第一張牌作為起始牌。
+2.決定順序：玩家猜拳決定出牌順序。
+3.接續出牌：順序第一的玩家先出牌，後續玩家依順時針方向，必須打出與上一張牌「同顏色」、「同樂器」或「特殊功能卡」的牌。
+4.無法出牌時：若手上沒有符合條件的牌可出，必須從中央的「抽牌堆」摸一張牌。若摸起來的牌符合出牌條件，可選擇立刻打出；若不符合，則換下一位玩家。
+四、遊戲結束/計分方式
+1.關鍵宣告：當玩家手中只剩最後一張牌時，必須立刻大喊：「音樂UNO GO!」。若忘記喊且被其他玩家發現，需從抽牌堆罰抽 2 張牌。
+2.獲勝者：最先將手中卡牌全部出完的玩家獲得最終勝利！
+|
+|
+玩法二 「音樂無界，有你有我」 (層級-性平概念)
+使用配件：同上，但再「錄音卡帶」和「5張人物題目卡」，上面有不同種性別的音樂家，題目卡上有他擅長的樂器
+音樂家代表:
+吳思珊（台灣女打擊樂家），畫面：一個帥氣的大姐姐在打鼓。卡牌下方符號：印上沙鈴和鼓。
+張尹芳（台灣女指揮家）畫面：一個大姐姐穿著西裝、拿著指揮棒，很有精神。卡牌下方符號：印上 「四種樂器（紅橘黃綠）都可以」 的彩虹圖標。
+ Doris / 陳惠婷（台灣搖滾女將），畫面：一個長髮大姐姐拿著酷酷的貝斯/吉他。卡牌下方符號：印上吉他。
+艾爾頓·強（國際鋼琴大師），畫面：一個穿著超炫彩色衣服、戴著大眼鏡的大哥哥在彈琴。卡牌下方符號：印上鋼琴。
+合唱團大合奏，畫面：男生和女生手牽手，一起快樂地搖手搖鈴。
+卡牌下方符號：印上「四種樂器（紅橘黃綠）都可以」 的彩虹圖標。
+人數:2-6人
+玩法(列點)
+1.遊戲準備：將 5 張「人物題目卡」面朝上排攤開放在中央。每位玩家分發 5 張手牌，其餘卡牌疊好作為「抽牌堆」。
+2.決定順序：玩家猜拳決定出牌順序。
+3.配對出牌（解鎖音樂家）：
+輪到該玩家時，檢查手牌。如果手牌中剛好有某張題目卡下方指定的樂器（例如：手上有「鼓」牌，桌上「吳思珊」題目上也有「鼓」），就可以把該張手牌放到吳思珊卡片的下方。
+出完牌後，該玩家立刻從「抽牌堆」重新抽一張牌，讓自己的手牌隨時維持 5 張。
+無法出牌時：若手牌皆無法與桌上的音樂家匹配，則放棄一張再從牌堆拿一張，手牌維持5張不變，再換下一位玩家。
+輪流前進：順時針換下一位玩家出牌，大家一起努力把 5 張人物題目卡上需要的樂器全部蓋滿！
+四、遊戲結束/計分方式
+1.當桌上 5 位性平音樂家的樂器全部被玩家用卡牌「蒐集、蓋滿」時，遊戲立即結束！全體玩家不分輸贏，一起把手舉高大喊：「音樂無界，有你有我！」
+2.團隊獲勝後，可以播放「錄音卡帶」。大家一起聆聽這 5 位性平音樂家的動聽音樂，或是聽聽他們打破性別框架的勇敢故事，為遊戲畫下完美的句點！
+|
+|
+玩法三 和弦連線：音樂家的溫暖快遞 (層級-SEL)
+使用配件:
+1.音樂島地圖(16格為成員，格子有+1(可以再向前一步，大家為他鼓掌)、+2（可以再向前兩步，大家跟他擊掌）、-1(退後一步，大家對他說沒關係)、-2（後退兩步，大家對他說繼續加油）的設計，再將5張人物題目卡隨穿插其中，若走到音樂家格子，要說此位音樂家的名字或擅長的樂器。
+2.音樂家角色棋子：每位玩家選擇一個音樂家做為自己的棋子，並放音樂家格子上。
+人數：2-6人
+玩法(列點)
+1.一人發5張卡牌。
+2..猜拳決定玩家順序，擲骰子(1-6點)，並依照擲點數走幾步(順時鐘)。
+3.若走到的是數字+號就是再往前，-號就是退後。
+4.若當你的棋子，「經過」或「停在」其他玩家的棋子所在的格子時，立刻觸發 SEL 互動(手中牌無法給自己使用，要送給別的玩家)。
+*走到和其他音樂玩家同一格，就一起擊掌打氣；
+*若超越其他音樂玩家，可以照對方玩家的題目卡所需，贈送1張手中的樂器卡，並再抽1張樂器卡，維持手中五張
+*若無法送出樂器卡，可以放棄手中的1張，並重抽1張樂器卡，維持手中五張。
+遊戲結束/計分方式
+1.合力把每位音樂家格子需要的樂器全部填滿！最後一起用樂器或敲打方式大合奏( we will rock you)
+|
+活動配件 |
+|
+需要教授、講師的支持或幫助
+(實作中發現的困難) |</div>
+                </details>
+            </article>
+
+            <!-- ==========================================================================
+               臺北市立中正幼兒園 頁面
+               ========================================================================== -->
+            <article id="zhong-zheng" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">F</span>
+                        臺北市立中正幼兒園
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">艋舺走讀趣</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《艾瑪媽媽》</p>
+                        <p><strong>原始參考桌遊：</strong>一起出來玩</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>唯一將「實地走讀」與「情境扮演」結合的戶外學具包設計，與萬華在地歷史、女力深度連結。</li>
+                <li><strong>核心機制：</strong>利用遊戲包，實地前往剝皮寮歷史街區闖關。包含比對呂阿昌醫師的新舊醫療設備、在秀英茶室扮演老闆娘與車伕進行禮貌對話與童玩互動、在鄉土教育中心挑戰童玩，收集拼圖。</li>
+                <li><strong>融入概念：</strong>認識早期萬華在地行業的性別角色（茶室老闆娘、三輪車伕、蔡阿信與呂阿昌醫師），並在扮演中學習禮貌與合作。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖 給予支持與鼓勵</h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">
+            中正幼兒園的「艋舺走讀趣」非常具有在地情懷！這不是一般的室內桌遊，而是將整個剝皮寮街區變成大遊戲盤，是極具原創性的戶外教育方案。
+            扮演「茶室老闆娘」與「三輪車伕」非常有趣，透過對話和古早童玩，讓孩子體驗萬華歷史中的庶民生活與性別角色，是非常接地氣的歷史文化與性平體驗！
+        </p>
+                </div>
+
+                <h2 class="section-headline">🚀 進一步發展的方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li><strong>拼圖獲得的動機優化：</strong>針對老師提到如何讓孩子有動力完成拼圖。建議將拼圖的背面設計成「萬華女力藏寶圖」，每得到一片拼圖，拼圖背面會拼出下一個女力景點的古今照片或線索。拼圖全部完成後，可以使用學具包內的「紅色濾鏡膠片」覆蓋在拼圖上，就會顯現隱藏的寶藏地點（如蔡阿信醫生的故事繪本或神秘小禮物）。</li>
+                <li><strong>秀英茶室扮演的性平觀念引導：</strong>「茶室老闆娘」與「三輪車伕」是傳統性別刻板職業。建議在這裡加入一個翻轉對話：「如果三輪車伕累了，老闆娘也可以幫忙拉車嗎？如果老闆娘要研發新茶，車伕也可以進來幫忙嗎？」，讓孩子扮演時體驗「工作是可以互相合作、不分性別的」。</li>
+                <li><strong>女力路線的具體延伸：</strong>可以引入台灣第一位女醫生蔡阿信在萬華的故事，設計「蔡阿信醫師的聽診器挑戰」：用聽診器道具聽箱子裡的聲音，猜猜是哪種醫療工具，傳遞女性也能擔任專業醫師的歷史事實。</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 走過台灣 (Walk Through Taiwan)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">這是一款介紹台灣歷史人物、事件與地理變遷的地圖卡牌桌遊。玩家透過卡牌的年代配對與地圖連線進行探險。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>它的「歷史事件卡」與「走讀闖關」概念一致，非常適合用於輔助歷史故事教學，有中文版，且教育通路極易取得。</p>
+                        <a href="https://www.google.com/search?q=走過台灣+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 大富翁：台灣版/台北版</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">最經典的地圖環狀走訪與資源收集遊戲，玩家繞行地圖買地、蓋房並進行隨機事件挑戰。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>大富翁是地圖路徑走訪的始祖，幼兒能快速理解「踩格子、做任務」的規則，中文版極易購買。</p>
+                        <a href="https://www.google.com/search?q=大富翁+台北版" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+艋舺走讀趣
+|
+改編者
+(學校名稱) |
+臺北市立中正幼兒園
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+艾瑪媽媽
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+一起出來玩
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+生理性別、性傾向、性別特質與性別認同多樣性的尊重
+身體自主權的尊重與維護
+性騷擾、性侵害與性霸凌的防治
+性別權力關係與互動
+性別與多元文化
+|
+|
+性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸 凌的防治(制)能力。
+性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+性 C3 尊重多元文化，關注本土的性別平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+1. 關係
+2. 價值觀、權利與性
+3. 理解性別   3.1 性別與性別常規的社會建構、 3.2 性別平等、刻
+板印象與偏見(秀英茶室)
+4. 暴力與安全保障
+5. 健康與福祉技能   5.5 尋求幫助與支持(東側呂阿昌、蔡阿信)
+6. 人體與發育
+7. 性與性行為
+8. 性與生殖健康
+|
+SDGS |
+SDG 1   SDG 2  SDG 3   SDG 4   SDG 5   SDG 6
+SDG 7   SDG 8  SDG 9   SDG 10 SDG 11  SDG 12
+SDG 13  SDG 14 SDG 15  SDG 16  SDG 17
+|
+SEL |
+情緒調節
+認知調節   做決定
+社交技巧   團隊合作
+公共精神   尊重他人
+自我認同與自主能動性
+|
+性別平等教育
+學習指標
+(參考附件) |
+性平-大-2-2-1樂於參與各類型的活動,不受性別限制
+性平-大-2-1-2聆聽相同或不同性別的人的想法,並給予適當的回應
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+身體動作與健康
+認知 認-1-3蒐集文化產物的訊息
+情緒 情-2-2適當地表達生活環境中他人與擬人物件的情緒
+語文
+美感
+社會 社-2-3調整自己的行動遵守生活規範與活動規則
+|
+活動方式 |
+遊戲地點：剝皮寮歷史街區(3.消防池地圖與紅磚、6太陽製、7.日祥旅
+社、10.秀英茶室13.土炭室、18鳳翔浴室、21.臺北市鄉土教
+育中心、22.東側呂阿昌醫師)
+遊戲方式：實際到剝皮寮歷史街區，利用遊戲包內的道具完成闖關活動
+遊戲內容：
+1.東側呂阿昌醫師：
+透過認識醫生過去/現在的醫療器材圖卡完成闖關
+(1)透過線索找到剝皮寮園區22號地點
+(2)孩子自由參觀室內的醫療設備器材
+(3)拿出圖卡比對現場之設備與圖卡上的設備差異
+(4)說出該設備的名稱與用途
+(5)闖關完成，獲得一枚拼圖
+(6)抽取下一關線索提示，並前往該區
+2.秀英茶室：
+利用扮演茶室老闆娘與三輪車伕(客人)的遊戲完成闖關
+(1)拿出遊戲袋內的扮演道具一人扮演老闆娘一人扮演車夫
+(2)透過禮貌用語來相互對話
+(3)從三種遊戲方式抽取一張(男生女生配、腳部剪刀石頭、烏龜翹)
+(4)老闆娘需贏對方一場以上才算闖關完成
+(5)闖關完成，獲得一枚拼圖
+(6)抽取下一關線索提示，並前往該區
+3.鄉土教育中心
+挑戰童玩遊戲來完成闖關遊戲
+|
+活動配件 |
+遊戲袋:
+線索提示卡、醫療設備圖卡、扮演道具(絲巾、頭巾)、拼圖
+|
+需要教授、講師的支持或幫助
+(實作中發現的困難) |
+小遊戲種類需要結合剝皮寮特色，需要多加思考
+完成的拼圖想要孩子有動力/動機去完成
+如何在剝皮寮街區延伸至萬華女力路線相關人物/場景</div>
+                </details>
+            </article>
+
+            <!-- ==========================================================================
+               士東附幼 頁面
+               ========================================================================== -->
+            <article id="shi-dong" class="page-container">
+                <div class="breadcrumb">
+                    <a href="#">首頁</a> <span>&gt;</span> <span class="tag-category">學校專頁</span>
+                </div>
+                <div class="question-card" style="margin-bottom: 1.5rem;">
+                    <div class="question-title" style="font-size: 1.6rem; font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        <span class="question-num">G</span>
+                        士東附幼
+                    </div>
+                    <div style="font-size: 1.05rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">研發主題：</strong><span style="font-weight: 600;">花布市集</span></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>參考繪本：</strong>《花布少年-瓦蘭廷的彩色世界》</p>
+                        <p><strong>原始參考桌遊：</strong>堆比思桌遊</p>
+                    </div>
+                </div>
+
+                <h2 class="section-headline">📋 構思設計重點整理</h2>
+                <div class="step-content" style="margin-bottom: 1.5rem;">
+                    
+            <ul>
+                <li><strong>設計背景：</strong>以《花布少年》為靈感，將「布料」、「縫紉」、「鈕扣」作為視覺與觸覺核心，呼應瓦蘭廷用縫紉自癒與縫補關係的故事。</li>
+                <li><strong>核心機制：</strong>設計三合一玩法：玩法一「花布接接樂」為圖案拼接得分；玩法二「花現順序」為限時花布配對並回答 12 題性平 O/X 題；玩法三「花布市集」為 3x3 內頁卡冊收集，回答高達 26 題以上的 SEL、支持與性平任務。</li>
+                <li><strong>融入概念：</strong>男孩子也可以喜歡粉紅色、花布與縫紉；勇敢做自己；如何面對嘲笑與傷害，用「縫紉」轉化情緒並縫補人際關係。</li>
+            </ul>
+        
+                </div>
+
+                <h2 class="section-headline">💖 給予支持與鼓勵</h2>
+                <div class="step-content" style="border-left: 5px solid #22c55e; background-color: rgba(34, 197, 94, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-primary); font-size: 0.98rem; font-weight: 500;">
+            士東附幼的「花布市集」真是一部傑作！不僅主題與繪本《花布少年》高度契合，而且將「縫補破衣服」昇華為「縫補受傷的心靈與人際關係」，這個寓意極美！
+            問題庫的設計非常扎實，特別是自我鼓勵卡（如「破掉的東西可以修好，我也能把壞心情變好」）非常有心理自癒效果。
+            玩法一的花色接龍非常考驗視覺辨識，玩法三的九宮格收納也極具收納儀式感，令人非常想動手遊玩！
+        </p>
+                </div>
+
+                <h2 class="section-headline">🚀 進一步發展的方向</h2>
+                <div class="step-content" style="border-left: 5px solid var(--secondary); background-color: rgba(249, 115, 22, 0.05); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <div style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                        
+            <ol>
+                <li><strong>打孔穿線的實作融入：</strong>針對老師提到想在玩法二中加入打洞穿線。這是絕佳的想法！可以設計幾片硬卡紙製成的「大花布板塊」，邊緣有孔洞。幼兒在回答完性平問題後，可以用粗棉線與安全塑膠針進行「縫紉」動作，把兩塊花布串聯起來。這不僅訓練手眼協調，更是對繪本中「瓦蘭廷縫紉」最直觀的體感體驗！</li>
+                <li><strong>鈕扣的防吞食安全考量：</strong>幼兒園使用鈕扣時，必須注意配件尺寸，應選擇直徑大於 3 公分的大型木質或塑膠鈕扣，避免幼兒意外吞食窒息，並增強抓握的舒適度。</li>
+                <li><strong>卡牌分類視覺化：</strong>卡片類別很多（支持、鼓勵、SEL、性平、分享、動手），建議將卡牌背面設計成不同的底色或插圖，方便幼兒在遊戲前進行分類擺放與設置。</li>
+            </ol>
+        
+                    </div>
+                </div>
+
+                <h2 class="section-headline">🎲 推薦可參考的優質桌遊 (好上手、中文版)</h2>
+                <div class="tips-grid" style="margin-bottom: 1.5rem;">
+                                        <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 拼布對決：兒童版 (Patchwork Express)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">兩名玩家競爭在各自的網格板上拼補花布版塊，並用鈕扣作為貨幣與得分工具，拼出最完整美麗的百衲被。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>這是最經典的拼布與鈕扣桌遊，專門為兒童簡化了版塊尺寸與規則，與士東的「花布、鈕扣」主題完美契合，有中文版且極好購買。</p>
+                        <a href="https://www.google.com/search?q=拼布對決+兒童版" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+                    <div class="tip-box" style="border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 8px;">🎲 哆寶 (Dobble / Spot It!)</h4>
+                        <p style="margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5;">快速辨識兩張卡牌上唯一相同符號的卡牌遊戲。有多種變體規則，玩法瘋狂刺激。</p>
+                        <p style="font-size: 0.88rem; color: var(--text-primary);"><strong style="color: var(--secondary)">💡 推薦理由：</strong>可用於訓練玩法一、二中快速辨識花色圖示的視覺專注力，是台灣最家喻戶曉的熱銷桌遊，有繁體中文版。</p>
+                        <a href="https://www.google.com/search?q=哆寶+桌遊" target="_blank" style="display: inline-block; font-size: 0.82rem; color: var(--primary); text-decoration: underline; margin-top: 8px;">搜尋此桌遊資訊 ↗</a>
+                    </div>
+
+                </div>
+
+                <h2 class="section-headline">📝 園所原始書寫內容</h2>
+                <details class="raw-content">
+                    <summary>點擊展開 / 收合原始構思表純文字內容</summary>
+                    <div class="raw-content-body">臺北市115年度幼兒園性別平等教育工作小組
+幼兒園從繪本談性別與尊重(SEL)暨學具研發  設計構思表
+|
+研發主題 |
+花布市集
+|
+改編者
+(學校名稱) |
+士東附幼
+|
+參考的繪本
+(可多本/請記錄作者及出版社) |
+花布少年-瓦蘭廷的彩色世界
+文：琪亞拉˙梅扎拉瑪
+圖：雷薩˙達勒文，出版社：聯經出版社
+|
+參考的桌遊
+(可多套/說明參考的面向) |
+堆比思桌遊
+|
+12年國民基本教育課程綱要議題核心素養、學習主題及實質內涵/性別議題
+(性平與尊重) |
+生理性別、性傾向、性別特質與性別認同多樣性的尊重
+身體自主權的尊重與維護
+性騷擾、性侵害與性霸凌的防治
+■ 性別權力關係與互動
+性別與多元文化
+|
+|
+■ 性 A1 尊重多元的生理性別、性別氣質、性傾向與性別認同，以促進性別的自我了解，發展不受性別限制之自我潛能
+性 A3 維護自我與尊重他人身體自主權，善用各項資源，保障性別權益，增進性騷擾、性侵害與性霸 凌的防治(制)能力。
+性 C2 覺察人際互動與情感關係中的性別權力，提升情感表達、平等溝通與處理情感挫折的能力。
+性C3 尊重多元文化，關注本土的性別 平權事務與全球之性別議題發展趨勢。
+|
+全面性教育
+(請填細項內容) |
+1. 關係
+2. 價值觀、權利與性
+■3. 理解性別 引導孩子理解性別表現可以是多元
+4. 暴力與安全保障
+5. 健康與福祉技能
+6. 人體與發育
+7. 性與性行為
+8. 性與生殖健康
+|
+SDGS |
+SDG 1   SDG 2  SDG 3  ■  SDG 4  ■ SDG 5   SDG 6
+SDG 7   SDG 8  SDG 9  ■  SDG 10  SDG 11  SDG 12
+SDG 13  SDG 14 SDG 15  SDG 16  SDG 17
+1.SDG 5性別平等
+2.SDG 10減少不平等
+3.SDG 4優質教育
+|
+SEL |
+■ 情緒調節   1.辨識情緒與情緒覺察：用顏色表達心情。2.勇氣與因應調適：面對不友善環境的勇氣。3.壓力調節與自癒：透過自己喜歡的事物(縫紉)調節心理壓力，將破碎的心靈縫補。
+認知調節
+■ 社交技巧  1.同理心： 即使被欺負仍願意修補關係。2.衝突轉化：從憤怒(撕破衣服)到平靜(縫紉花布)，最後轉化為善意(縫製新衣)
+■ 公共精神   1.尊重他人及理解差異：用「彩虹」象徵多元與包容。
+■ 自我認同與自主能動性 1.認識優點與自我效能感：喜歡縫紉與色彩。2.心理韌性：從興趣建立自信與自我價值。
+|
+性別平等教育
+學習指標
+(參考附件) |
+3-1肯定自己與尊重他人的特質，不受性別的限制。
+瓦蘭廷打破了「男孩就該玩足球、穿著陽剛」的刻板印象。他心思細膩、熱愛粉紅色與縫紉，這些「溫柔」的特質被描繪為一種獨特的美感，故事揭露了校園中常見的「性別霸凌」——安東尼等人對瓦蘭廷的肢體與語言暴力，最後瓦蘭廷與其爆發衝突，瓦蘭廷透過縫紉從憤怒(撕破衣服)到平靜(縫紉花布)，最後轉化為善意(縫製新衣)。
+|
+幼兒園課程大綱
+學習領域
+( 需寫到指標2層) |
+身體動作與健康
+■認知認-大-2-1-2 覺知物件間排列的型式
+情緒
+■語文語-中-2-3-1 敘說時表達對某項經驗的觀點或感受
+語-中-2-6-2 說出、畫出或演出自己是敘事文本中的某個角色會有哪些感覺與行動
+■美感美-中-1-2-1 探索生活環境中事物的色彩、形體、質地的美，感受其中的差異
+社會
+|
+活動方式 |
+玩法一 花布接接樂  (層級-認識重要配件)
+一、使用配件
+16張花布圖卡*3份
+人數
+1-4人
+玩法(列點)
+1.花布卡朝下，將48張花布卡牌洗牌
+2.每人發4張花布卡，中間翻開兩張花布卡
+3.每人出一張花布卡任意接在其他花布上下左右，頭尾同一花色即
+可拿取整排並得分
+4.出一張手牌後可以在中間的牌中抽一張(手牌保持4張)
+四、遊戲結束/計分方式
+中間卡牌全部拿完，蒐集到最多卡牌即獲勝
+|
+|
+玩法二 花現順序 (層級-性平概念)
+使用配件
+1.1 分鐘沙漏
+2.12題花布序列卡(如圖示)
+正面
+性平問題
+性平問題
+性平問題
+性平問題     反面
+3.16張花布圖卡
+人數
+1-4人
+玩法
+1.抽一張花布序列卡，將16張花布卡蓋住，於一分鐘內翻出需要的花
+布圖案
+2.找到相同的花布圖案放在花布序列卡上，完成後即可翻到背面進行性平問題12題序列卡題目：(與性別平等相關，初階)
+1.男生可以穿花布衣服嗎？ 《花布少年-瓦蘭廷的彩色世界》
+2.男生喜歡粉紅色，可以嗎？ 《粉紅色影子的男孩》
+3.男生可以當服裝設計師嗎？吳季剛
+4.男生可以當舞蹈家嗎？雲門舞集-林懷民
+5.男生可以跳芭蕾舞嗎？《芭蕾舞男孩》
+6.男生可以喜歡裝扮嗎？美國變裝皇后-妮妃雅
+7.女生可以喜歡舉重嗎？郭婞淳
+8.女生可以喜歡跆拳道嗎？陳詩欣
+9.女生可以穿褲子嗎？《瑪莉愛什麼就穿什麼》
+10.女生可以當醫生嗎？《向夢想前進的女孩》台灣第一位女醫生-蔡阿信
+11.女生可以喜歡賽車嗎？蘇西˙沃爾夫
+12.女生可以當建築師嗎？《世界不是方盒子：札哈˙哈蒂》
+3.使用點讀筆念出題目，大家一起用手比出O或X，分享各自的看法
+四、遊戲結束/計分方式
+完成花布序列卡
+|
+|
+玩法三 花布市集 (層級-SEL)
+一、使用配件
+1.蒐集卡冊
+2.蒐集卡冊內頁
+3.16款花布卡*3張
+4.空白花布卡*6張
+5.花布鈕扣數個
+二、人數:1-4人
+三、玩法(列點)
+1.將16款不同花布卡放入蒐集卡冊中，
+每種花色各3張，
+空白花布卡每3張放同一格中，
+共54張花布卡
+2.每個人拿一張蒐集卡冊內頁(花布九宮格中)
+3.打開花布市集，抽取一張花布卡，翻到背面回答任務：
+(1)家人朋友支持-8張
+支持卡內容:
+1.我愛你
+2.我會陪你
+3.友誼是什麼顏色都有的喔！
+4.被撕壞的東西是可以修好的
+5.我支持你
+6.勇敢去做你喜歡的事情
+7.(大家一起)拍拍手
+8.(大家一起)比讚
+(2)自我鼓勵卡-8張
+我喜歡我自己
+就算在灰暗的日子裡，我也能讓自己閃閃發亮
+深呼吸，『喀噠喀噠』，慢慢找回心中的平靜。
+沒關係，受傷的心也可以像布料一樣，慢慢縫補起來
+我可以很溫柔，同時也可以很勇敢
+沒關係，受傷的心也可以像布料一樣，慢慢縫補起來
+我就是最美的顏色！
+破掉的東西可以修好，我也能把壞心情變好！
+(3)SEL（社會情緒學習）議題-12題
+1.如果別人笑你的作品，你會有什麼感受？
+A.開心B.難過C.興奮D.其他
+2.你最喜歡做什麼事情？選一塊花布代表你自己。
+（開放式回答）目的：認識自己的興趣與喜好。
+3.當你被誤會時，心情可能是？會選擇哪一塊花布代表你的心情？
+A.傷心B. 開心C. 生氣D.其他
+4.媽媽帶瓦蘭廷去買花布，瓦蘭廷挑了最美麗的顏色。如果今天你可以自己決定，你最想跟好朋友一起分享哪一種玩具或遊戲？大聲說出來！
+5.如果你看到有人被別人嘲笑，一個人躲在角落很難過，你可以怎麼做？ A.假裝沒看到 B.對他說：「我們一起去玩吧！」 C.告訴老師有人需要幫忙D.其他
+6.看到朋友哭，你可以怎麼做？A.關心他B.陪伴他C.其他
+7.朋友和你喜歡的不一樣，你應該怎麼做？A.嘲笑他B.尊重他C.不跟他玩D.其他
+8.如果朋友沒有被邀請一起玩，你覺得他可能會？A.開心B.難過C.生氣D.其他
+9.你想玩的玩具別人正在玩，你可以怎麼做？A.直接搶B.推開他C.禮貌詢問D.其他
+10.瓦蘭廷喜歡玩縫紉機，有些男同學卻笑他。如果班上有男同學喜歡玩洋娃娃，或是女同學喜歡玩小汽車，你會怎麼做？
+11.瓦蘭廷覺得破掉的衣服可以縫好，吵架的好朋友也可以和好。如果不小心跟好朋友吵架了，你可以用什麼「魔法」跟他和好？ A.勇敢說「對不起」 B.畫一張可愛的圖送給他 C.輕輕牽牽他的手
+12.瓦蘭廷穿上自己做的彩虹衣服，覺得自己好棒！你今天有哪一件事情覺得自己做得很棒？（例如：把飯吃光光、幫忙收玩具）
+13.故事最後，瓦蘭廷穿上最喜歡的衣服，充滿自信地說今天要「跟自己約會」。你最喜歡自己身上的哪個特點或優點？大聲說出一個讓你為自己感到驕傲的地方吧！
+14.當你非常生氣、覺得自己快要「爆炸」的時候，你可以練習做什麼動作來讓自己冷靜（例如深呼吸、數到十），避免做出會後悔的舉動？
+(4)性別平等議題-12題
+1.瓦蘭廷喜歡花布和縫衣服，如果是你，你會怎麼做？
+A.笑他B.不理他C.尊重他的喜好D.其他
+2.班上有同學說：「這是女生玩的玩具！」你會怎麼說？
+引導如：大家都可以玩喜歡就可以玩。玩具不分男生女生。
+3.有同學喜歡穿和別人不一樣的衣服，你會：
+A.嘲笑他B.和他一起玩C.不讓他加入D.其他
+4.瓦蘭廷的好朋友幾乎都是女孩子（例如艾琳）。你覺得男生和女生可以牽手一起玩，當超級好朋友嗎？A.可以，大家都能一起玩B.不行，男生只能跟男生玩C.其他
+5.瓦蘭廷喜歡粉紅色、黃色，喜歡穿得色彩繽紛。你覺得男孩子可以穿粉紅色的衣服，或是背粉紅色的書包嗎？A.可以，喜歡什麼顏色都可以 B.不行，男生只能用藍色或黑色C.其他
+6.書裡的男同學都在踢足球。如果班上女同學也想一起踢足球，你會說什麼？A.好啊！我們一起踢！B.不行，女生不會踢球C.其他
+7.有些小男孩喜歡留長頭髮，有些小女孩喜歡剪短短的頭髮。看到跟平常不一樣髮型的小朋友，你會怎麼做？A.覺得很酷，想跟他做朋友B. 覺得好奇怪，不要理他C.其他
+8.瓦蘭廷受傷的時候，痛到在保健室裡哭了。如果男同學跌倒哭了，或是覺得很難過一直哭，你會對他說什麼？A.男生很勇敢，不可以哭喔！B.會痛痛對不對？哭出來沒關係，我陪你C.其他
+9.瓦蘭廷是一個很溫柔、不喜歡吵架的男孩。你覺得男生一定要很強壯、講話很大聲嗎？A.對，男生就是要很酷很大聲B.不一定，男生也可以很溫柔、安靜、喜歡畫畫D.其他
+10.瓦蘭廷是一個小男孩，但他最想要的生日禮物是「縫紉機」。如果班上有男同學喜歡玩洋娃娃或煮菜遊戲，你會怎麼想？A.嘲笑他 B.覺得很棒，邀請他一起玩 C.跟他說這是女生玩的D.其他
+11.老師發玩具了！箱子裡有小汽車和串珠珠。如果你是小男孩，你可以選串珠珠嗎？如果你是小女孩，你可以選小汽車嗎？A.可以，想玩什麼就選什麼B.不可以，男生只能玩車車C.其他
+12.大家在玩「扮家家酒」，一個男同學說他想要當「媽媽」或「負責照顧小寶寶的人」。大家可以怎麼對他說？A.好啊，換你來照顧小寶寶！ B.不行，男生只能當爸爸出門上班C.其他
+(5)分享卡-6張
+抽到分享卡，把手中這張花布卡送給其他人，
+可以得到一顆鈕扣，放進自己的花布九宮格中
+(6)動手做做看-8張
+抽到這張卡，依照題目完成鈕扣排序或疊起來
+4.若選擇空白花布，在回答完問題後即可自行設計花布
+5.完成任務，將卡片放入自己的花布九宮格中
+四、遊戲結束/計分方式
+全部人完成花布即過關
+|
+活動配件 |
+16款花布圖卡*3份(玩法一&amp;二)
+1 分鐘沙漏
+12題花布序列卡(背面題目)
+蒐集卡冊
+蒐集卡冊內頁
+16款花布卡*3張(背面題目)
+空白花布卡*6張(背面題目)
+花布鈕扣數個
+|
+需要教授、講師的支持或幫助
+(實作中發現的困難) |
+1.玩法二遊戲加上打洞穿線，增加遊戲趣味性
+2.花布圖卡選擇，以書上出現花色為主，是否加入台灣常見花色</div>
+                </details>
+            </article>
+
+        </main>
+    <div class="sidebar-overlay"></div></div>
+
+    <!-- 插入圖片 Modal -->
+    <div id="imageModal" class="custom-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📷 插入圖片工具</h3>
+                <span class="modal-close" id="closeModal">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tabs">
+                    <button class="modal-tab-btn active" data-tab="tab-local">本機上傳 (自動嵌入網頁)</button>
+                    <button class="modal-tab-btn" data-tab="tab-path">路徑/網址 (引用外部檔案)</button>
+                </div>
+                
+                <!-- 本機上傳分頁 -->
+                <div id="tab-local" class="modal-tab-panel active">
+                    <p class="tab-desc">選擇您電腦裡的圖片，系統會將它轉換為 Base64 編碼嵌入 HTML。這樣網頁下載後就能獨立顯示，圖片不會遺失！</p>
+                    <div id="dropzone" class="upload-dropzone">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span id="uploadStatusText">點擊選擇電腦中的圖片</span>
+                    </div>
+                    <input type="file" id="localImgInput" accept="image/*" style="display: none;">
+                    <div id="imgPreviewContainer" style="display: none; margin-top: 15px; text-align: center;">
+                        <img id="localImgPreview" src="" alt="預覽圖" style="max-height: 150px; border-radius: 8px; border: 1px solid var(--border);">
+                        <p id="localImgName" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 5px;"></p>
+                    </div>
+                </div>
+                
+                <!-- 路徑網址分頁 -->
+                <div id="tab-path" class="modal-tab-panel">
+                    <p class="tab-desc">輸入相對於此 HTML 網頁的本機圖片路徑（如 <code>images/photo.png</code>）或網路圖片 URL。</p>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="imgUrlInput">圖片路徑或網址：</label>
+                        <input type="text" id="imgUrlInput" class="search-input" placeholder="例如：images/my_photo.png 或 https://example.com/pic.jpg" style="padding-left: 15px; margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-text" id="cancelImgBtn" style="background-color: var(--text-light); color: var(--text-primary); border: 1px solid var(--border);">取消</button>
+                <button class="btn-text" id="confirmImgBtn" style="background-color: var(--primary); color: #ffffff;">確認插入</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 圖片調整大小工具列 -->
+    <div id="imageResizerToolbar" class="image-resizer-toolbar" style="display: none; top: 369.344px; left: 556.75px;">
+        <button class="resize-btn" data-size="25">25%</button>
+        <button class="resize-btn" data-size="50">50%</button>
+        <button class="resize-btn" data-size="75">75%</button>
+        <button class="resize-btn" data-size="100">100%</button>
+        <button class="resize-btn delete-img-btn" style="background-color: #ef4444; color: #ffffff; border: none; margin-left: 5px;">🗑️ 刪除</button>
+    </div>
+
+    <!-- JavaScript 腳本 -->
+    <script src="script.js"></script>
+
+
+
+<div id="toastNotice" style="position: fixed; bottom: 30px; right: 30px; background-color: var(--secondary); color: rgb(255, 255, 255); padding: 12px 24px; border-radius: 8px; box-shadow: var(--shadow-lg); font-weight: 600; font-size: 0.95rem; z-index: 10000; opacity: 0; transform: translateY(10px); transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px;">💾 變更已自動儲存！重新整理網頁仍會保留。</div></body></html>
